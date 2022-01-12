@@ -1,0 +1,74 @@
+The subbet sum problem 
+
+Qual é o problema ?
+Quais sao os dados?
+Qual é o resultado pretendido?
+
+Dados:
+-1 array de numeros inteiros positivos(ordem crescentes)
+-valor S
+Questao: há algum subconjunto dos elementos do array,cuja soma é S
+
+Resposta: Sim -> quais sao? -> 0|1|0|1|...|
+	  Nao
+
+Quais estrategias sao pedidas?
+1- Prova exaustiva (força bruta) de modo recursivo
+	{1,2,3}	S=3
+	b
+	percorrer os sucessivos numeros binarios de tamanho n, de moto iterativo Força-Bruta
+		|Soma
+	000	|0	X
+	001	|3	solução
+	010	|2	X
+	011	|5	X
+	100	|1	X
+	101	|4	X
+	110	|3	solução
+	111	|6	X
+	
+	Complexidade: 2^n
+
+2- Nós da arvore representao a soma parcial
+
+																|0| | 
+								rejeitar 1											aceitar 1
+								|0|(|0| |)
+				rejeitar 2						aceitar 2					(...)			(...)	
+				|0|(|0|0|)						|2|(|0|1|)
+		rejeitar 3		aceitar 3		rejeitar 3		aceitar 3	
+	 |0|(|0|0|0|)	  |3|(|0|0|1|)	   |2|(|0|1|0|)    |5|(|0|1|1|)	
+		Errado		Certo		Errado		
+
+brute-force(int n, integer_t p[],integer_t desired_sum, int current_index, integer_t partial_sum, integer_t b[])
+
+
+(Funçao que imprime funçao b para verificar se os valores estao certos)
+
+
+
+
+
+1)funcao recursiva- brute force - melhorar a lista de argumentos
+								- começamos na semana passada
+2)funcao recursiva-branch and bound - modificacao simples de anterior(funcao recursiva)
+3) meet in the middle
+4) meeet in the middle MELHORADO
+
+
+																|0| | 
+													verificar a soma total (1+2+3=6)
+															somaResto=6
+								rejeitar 1											aceitar 1
+								|0|(|0| |)
+								somaResto=6											somaResto=6-1=5
+							
+				rejeitar 2						aceitar 2					(...)			(...)	
+				|0|(|0|0|)						|2|(|0|1|)
+				somaResto=6						somaResto=6-2=4
+		rejeitar 3		aceitar 3		rejeitar 3		aceitar 3	
+	 |0|(|0|0|0|)	  |3|(|0|0|1|)	   |2|(|0|1|0|)    |5|(|0|1|1|)	
+	  somaResto=6	 somaResto=6-3=3	somaResto=4		somaResto=4-3=1
+		Errado			Certo			Errado			somaResto!=desejado
+														somaResto<desejado	
+														
