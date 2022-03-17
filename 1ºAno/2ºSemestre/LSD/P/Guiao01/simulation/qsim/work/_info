@@ -1,0 +1,150 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/hp/Desktop/Escola/Agora/LSD/P/Guiao01/simulation/qsim
+vGateDemo
+Z1 !s110 1647509986
+!i10b 1
+!s100 DmaP<lOn3o6a[f<`WC3[R1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IIn^62hF_a=gL?E83digZ23
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1647509983
+8GateDemo.vo
+FGateDemo.vo
+!i122 0
+L0 32 72
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1647509986.000000
+!s107 GateDemo.vo|
+!s90 -work|work|GateDemo.vo|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@gate@demo
+Egatedemo
+Z8 w1647510091
+Z9 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z10 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
+Z11 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z14 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
+!i122 4
+R0
+Z15 8GateDemo.vho
+Z16 FGateDemo.vho
+l0
+L35 1
+VMhC`a08fJQO[Za^U;f6H72
+!s100 TRa8gXiQBPgA:N]fTEAQ31
+Z17 OV;C;2020.1;71
+32
+Z18 !s110 1647510092
+!i10b 1
+Z19 !s108 1647510092.000000
+Z20 !s90 -work|work|GateDemo.vho|
+Z21 !s107 GateDemo.vho|
+!i113 1
+R6
+Z22 tExplicit 1 CvgOpt 0
+Astructure
+R9
+R10
+R11
+R12
+R13
+R14
+DEx4 work 8 gatedemo 0 22 MhC`a08fJQO[Za^U;f6H72
+!i122 4
+l59
+L42 72
+Va6f1CSbH6B1H03`^dlWeK1
+!s100 k7c0?EMLkP][bRPKo]l_B2
+R17
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R6
+R22
+Egatedemo_vhd_vec_tst
+Z23 w1647510090
+R12
+R13
+!i122 5
+R0
+Z24 8GateDemo.vwf.vht
+Z25 FGateDemo.vwf.vht
+l0
+L32 1
+V6cP6Ym2gH5GlGLc>USo020
+!s100 XYFQ4nK6noeeQ6Oi7R@NC2
+R17
+32
+R18
+!i10b 1
+R19
+Z26 !s90 -work|work|GateDemo.vwf.vht|
+Z27 !s107 GateDemo.vwf.vht|
+!i113 1
+R6
+R22
+Agatedemo_arch
+R12
+R13
+Z28 DEx4 work 20 gatedemo_vhd_vec_tst 0 22 6cP6Ym2gH5GlGLc>USo020
+!i122 5
+l45
+Z29 L34 47
+Z30 V8A[OgFh[1JW>;7aBKW1z81
+Z31 !s100 L__;VYz:XZd5e49kBG6B>0
+R17
+32
+R18
+!i10b 1
+R19
+R26
+R27
+!i113 1
+R6
+R22
+vGateDemo_vlg_vec_tst
+R1
+!i10b 1
+!s100 doo:zYQ5nlj8cFXC65oW`2
+R2
+IIJ9YaHSJIR4l[IS0WzZ[E0
+R3
+R0
+w1647509982
+8GateDemo.vwf.vt
+FGateDemo.vwf.vt
+!i122 1
+L0 30 36
+R4
+r1
+!s85 0
+31
+R5
+!s107 GateDemo.vwf.vt|
+!s90 -work|work|GateDemo.vwf.vt|
+!i113 1
+R6
+R7
+n@gate@demo_vlg_vec_tst
