@@ -5,8 +5,19 @@ import java.util.Scanner;
 public class Ex3 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Insira um valor positivo inteiro para realizar a contagem decrescente: ");
-
+        int valor;
+        do {
+            System.out.println("Insira um valor positivo inteiro para verificar se primo: ");
+            valor = input.nextInt();
+        } while (valor < 0);
+        if (valor == 2 || valor == 3 || valor == 5 || valor == 7) {
+            System.out.println("Valor primo");
+        } else {
+            if (valor == 0 || valor == 1 || valor % 2 == 0 || valor % 3 == 0 || valor % 5 == 0 || valor % 7 == 0) {
+                System.out.println("Valor nao primo");
+            } else
+                System.out.println("Valor primo");
+        }
         input.close();
     }
 
