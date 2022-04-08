@@ -3,60 +3,61 @@ package Aula04;
 import java.util.Scanner;
 
 public class Ex2 {
-    // conte o número de carateres numéricos (0..9) da string
+
+    // conta o número de carateres numéricos (0..9) da string
     public static int countDigits(String s) {
-
-        try {
-            double d = Double.parseDouble(s);
-        } catch (NumberFormatException nfe) {
-            return false;
+        int charCount = 0;
+        System.out.println("");
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isDigit(s.charAt(i)))
+                charCount++;
         }
-        return true;
-
+        return charCount;
     }
 
     // quantos espaços contem a string
     public static int countSpaces(String s) {
-
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == ' ') {
+                count++;
+            }
+        }
+        return count;
     }
 
     // Indique se só contem minusculas
     public static Boolean checkLowerCase(String s) {
-
+        String lil = new String(s.toLowerCase());
+        if (lil.equals(s))
+            return true;
+        else
+            return false;
     }
 
     // substituir varios espaços por apenas 1 unico espaço
-    public static int reduceSpaces(String s) {
+    public static String reduceSpaces(String s) {
+        String newString = s.trim().replaceAll(" +", " ");
+
+        return newString;
 
     }
 
     // verificar se palindromo
-    public static int checkPalindromo(String s) {
+    public static Boolean checkPalindromo(String s) {
+        String newString = "";
+        for (int i = s.length() - 1; i >= 0; i--) {
+            newString += s.charAt(i);
 
+        }
+        System.out.println("String written in reverse: " + newString);
+        if (newString.equals(s)) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
-    /*
-     * int numericos=0;
-     * boolean minusculo = true;
-     * boolean palindromo = true;
-     * for(int i = 0; i<s.length ; i++){
-     * total++;
-     * if(carater i != carater s.length-i){
-     * palindromo = false;}
-     * if(carateres a cima de x limite tipo 300)
-     * numericos++ ;
-     * if(carater = " ")
-     * espaco++
-     * while//talvez enquanto carater a carater copia para uma nova string e quando
-     * é detetado um espaço entra num ciclo while {(carater!= null ou " ")nao
-     * escrever na nova string}
-     * if(maiusculo){
-     * minusculo = false;}
-     * }
-     * System.out.printf(" Total de carateres: "+total);
-     * System.out.printf(" Total de numericos: "+numericos);
-     * 
-     */
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -66,11 +67,15 @@ public class Ex2 {
             System.out.println("Invalid string");
 
         System.out.printf("Number of numeric characters: " + countDigits(s));
+        System.out.println();
         System.out.printf("Number of spaces: " + countSpaces(s));
+        System.out.println();
         System.out.printf("Check if string is in lowerCase: " + checkLowerCase(s));
+        System.out.println();
         System.out.printf("String with only one space in between words: " + reduceSpaces(s));
+        System.out.println();
         System.out.printf("Check if palindrome: " + checkPalindromo(s));
-
+        System.out.println();
         input.close();
     }
 
