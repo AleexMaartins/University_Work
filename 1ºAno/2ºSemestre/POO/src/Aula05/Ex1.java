@@ -1,7 +1,7 @@
-//package Aula05;
+package Aula05;
 
 import java.io.IOException;
-import java.lang.System.*;
+
 import java.util.Scanner;
 
 public class Ex1 {
@@ -29,8 +29,10 @@ public class Ex1 {
     }
 
     public static void main(String[] args) throws IOException {
+
         Date date = null;
         int operation = 1;
+        // CB: falta repetir usando um ciclo. Sugiro do ... while
         operation = askOperation(operation);
         System.out.println("OP = " + operation);
         switch (operation) {

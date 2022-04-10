@@ -1,16 +1,17 @@
-//package Aula05;
+package Aula05;
 
 import java.util.Scanner;
 
-public class Date {
+public class Date1 {
     public static final Scanner input = new Scanner(System.in);
     private int day;
     private int month;
     private int year;
 
     Date() {
+        System.out.println("Year:"); // CB deve alterar incluir print para month e day!
         year = input.nextInt();
-        System.out.println("inicio");
+
         do {
             month = input.nextInt();
 
@@ -23,7 +24,7 @@ public class Date {
             if (!valid(day, month, year))
                 System.out.println("Error! Insert a valid day: ");
         } while (!valid(day, month, year));
-        System.out.println(toString(day, month, year));
+        System.out.println(this); // CB
 
     }
 
@@ -81,12 +82,43 @@ public class Date {
         }
         return true;
     }
+    /*
+     * //CB: a versão do java que tenho instalada aina não suporta mais do que uma
+     * opção no switch case...
+     * public static int monthDays(int month, int year) {
+     * Boolean leap = leapYear(year);
+     * int numDias = 0;
+     * switch (month) {
+     * case 1, 3, 5, 7, 8, 10, 12:
+     * numDias = 31;
+     * return numDias;
+     * 
+     * case 2:
+     * if (leap)
+     * numDias = 29;
+     * numDias = 28;
+     * 
+     * return numDias;
+     * default:
+     * numDias = 30;
+     * return numDias;
+     * 
+     * }
+     * 
+     * }
+     */
 
     public static int monthDays(int month, int year) {
         Boolean leap = leapYear(year);
         int numDias = 0;
         switch (month) {
-            case 1, 3, 5, 7, 8, 10, 12:
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
                 numDias = 31;
                 return numDias;
 
@@ -123,7 +155,9 @@ public class Date {
         return true;
     }
 
-    public String toString(int year, int month, int day) {
+    @Override
+    public String toString() { // CB: este método deve ser um método aplicado ao objeto e não um método
+                               // estático
         return String.format("%04d-%02d-%02d", year, month, day);
     }
 }
