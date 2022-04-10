@@ -8,7 +8,7 @@ public class Date1 {
     private int month;
     private int year;
 
-    Date() {
+    Date1() {
         System.out.println("Year:"); // CB deve alterar incluir print para month e day!
         year = input.nextInt();
 
@@ -28,7 +28,7 @@ public class Date1 {
 
     }
 
-    Date(int day, int month, int year) {
+    Date1(int day, int month, int year) {
         this.day = day;
         this.month = month;
         this.year = year;

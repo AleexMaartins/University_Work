@@ -30,7 +30,7 @@ public class Ex1 {
 
     public static void main(String[] args) throws IOException {
 
-        Date date = null;
+        Date1 date = null;
         int operation = 1;
         // CB: falta repetir usando um ciclo. Sugiro do ... while
         operation = askOperation(operation);
@@ -39,7 +39,7 @@ public class Ex1 {
             case 1:
                 System.out.println("OP1 ");
 
-                date = new Date();
+                date = new Date1();
                 break;
             case 2:
                 System.out.println("You chose 2 - Show current date: ");
