@@ -9,18 +9,24 @@ public class Date1 {
     private int year;
 
     Date1() {
-        System.out.println("Year:"); // CB deve alterar incluir print para month e day!
+        System.out.print("Year: "); // CB deve alterar incluir print para month e day!
         year = input.nextInt();
+        
 
         do {
+            System.out.print("Month: ");
             month = input.nextInt();
+            
 
             if (!validMonth(month))
                 System.out.println("Error! Insert a valid month: ");// erro
         } while (!validMonth(month));
 
         do {
+            System.out.print("Day: ");
             day = input.nextInt();
+            
+
             if (!valid(day, month, year))
                 System.out.println("Error! Insert a valid day: ");
         } while (!valid(day, month, year));
