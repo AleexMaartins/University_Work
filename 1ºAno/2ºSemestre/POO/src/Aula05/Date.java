@@ -2,21 +2,19 @@ package Aula05;
 
 import java.util.Scanner;
 
-public class Date1 {
+public class Date {
     public static final Scanner input = new Scanner(System.in);
     private int day;
     private int month;
     private int year;
 
-    Date1() {
+    Date() {
         System.out.print("Year: "); // CB deve alterar incluir print para month e day!
         year = input.nextInt();
-        
 
         do {
             System.out.print("Month: ");
             month = input.nextInt();
-            
 
             if (!validMonth(month))
                 System.out.println("Error! Insert a valid month: ");// erro
@@ -25,7 +23,6 @@ public class Date1 {
         do {
             System.out.print("Day: ");
             day = input.nextInt();
-            
 
             if (!valid(day, month, year))
                 System.out.println("Error! Insert a valid day: ");
@@ -34,7 +31,7 @@ public class Date1 {
 
     }
 
-    Date1(int day, int month, int year) {
+    public Date(int day, int month, int year) {
         this.day = day;
         this.month = month;
         this.year = year;
