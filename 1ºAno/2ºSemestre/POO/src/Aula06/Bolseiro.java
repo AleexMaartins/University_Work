@@ -7,6 +7,11 @@ public class Bolseiro extends Aluno {
     private int bolsa;
     int nMec = 99;
 
+    Bolseiro(String iNome, int iBI, Date iDataNasc, int bolsa) {
+        super(iNome, iBI, iDataNasc);
+        this.bolsa = bolsa;
+    }
+
     public void Bolsa(String nome, String cc, Date dataNasc, int bolsa) {
         this.bolsa = bolsa;
     }
@@ -15,8 +20,8 @@ public class Bolseiro extends Aluno {
         return bolsa;
     }
 
-    public void setBolsa(int bolsa) {
-        this.bolsa = bolsa;
+    public void setBolsa(int newBolsa) {
+        this.bolsa = newBolsa;
     }
 
 }
