@@ -19,4 +19,9 @@ public class Pessoa {
     String getName() {
         return nome;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s; CC: %d; Data de Nascimento: %s", this.nome, this.cc, this.dataNasc);
+    }
 }

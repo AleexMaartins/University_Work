@@ -23,9 +23,10 @@ public class Aluno extends Pessoa {
         return nMec++;
     }
 
-    String getName() { // retorna o número mecanográfico
-        return iNome;
-    }
+    @Override
+    public String toString() {
+        return String.format("%s; nMec: %d; inscDate: %s", super.toString(), this.nMec, this.iDataInsc);
 
-    // ... acrescentar métodos necessários
+        // ... acrescentar métodos necessários
+    }
 }

@@ -13,4 +13,3 @@ public class Ex1 {
         System.out.println(bls);
     }
 }
-// implementar o "@Override public String toString()"
