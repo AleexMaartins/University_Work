@@ -1,41 +1,48 @@
 package Aula07;
 
-public class Retangulo {
-    private double comprimento;
-    private double altura;
+public class Retangulo extends Forma {
+    private double valor1;
+    private double valor2;
 
-    Retangulo(double comprimento, double altura) {
-        setRetangulo3(comprimento, altura);
+    Retangulo(String cor, double valor1, double valor2) {
+        super(cor);
+        this.setRetangulo(valor1, valor2);
+
     }
 
     public double perimetro() {
-        return comprimento * 2 + altura * 2;
+        return valor1 * 2 + valor2 * 2;
     }
 
     public double area() {
-        return comprimento * altura;
+        return valor1 * valor2;
     }
 
     public String toString() {
-        return "Retangulo com lados: " + this.comprimento + " : " + this.altura;
+        return "|Retangulo com lados: " + this.valor1 + " e " + this.valor2 + " |cor: " + super.getCor();
+
     }
 
     public boolean equals(Retangulo b) {
-        return this.comprimento == b.getComprimento() && this.altura == b.getAltura();
+        return this.valor1 == b.getComprimento() && this.valor2 == b.getAltura();
+    }
+
+    public boolean equalsCor(Retangulo b) {
+        return this.cor == b.getCor();
     }
 
     public double getComprimento() {
-        return this.comprimento;
+        return this.valor1;
     }
 
     public double getAltura() {
-        return this.altura;
+        return this.valor2;
     }
 
-    public void setRetangulo3(double comprimento, double altura) {
+    public void setRetangulo(double comprimento, double altura) {
         assert comprimento > 0 && altura > 0;
-        this.comprimento = comprimento;
-        this.altura = altura;
+        this.valor1 = comprimento;
+        this.valor2 = altura;
     }
 
 }
