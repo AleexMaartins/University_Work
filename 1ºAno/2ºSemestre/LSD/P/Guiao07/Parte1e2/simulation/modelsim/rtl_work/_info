@@ -1,0 +1,94 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/hp/Escola/Agora/LSD/P/Guiao07/simulation/modelsim
+Edec2_4en
+Z1 w1651741568
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z4 8C:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En.vhd
+Z5 FC:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En.vhd
+l0
+L3 1
+V6KSof7j_D@b774Da?ofF03
+!s100 a391OaTBfF7E2V`=KejRT3
+Z6 OV;C;2020.1;71
+31
+Z7 !s110 1651742467
+!i10b 1
+Z8 !s108 1651742466.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En.vhd|
+Z10 !s107 C:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+Z13 DEx4 work 8 dec2_4en 0 22 6KSof7j_D@b774Da?ofF03
+!i122 0
+l10
+L9 19
+VoiofiQ`4TzLbfTjE@n`he0
+!s100 n<G[5dKB^e7>ZUIbXI`]:0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Edec2_4en_tb
+Z14 w1651741862
+R2
+R3
+!i122 3
+R0
+Z15 8C:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En_Tb.vhd
+Z16 FC:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En_Tb.vhd
+l0
+L4 1
+V9zBJOC`G>DnVbeWCFZ^If2
+!s100 7CI>RFTHk1488C1=fP=iV2
+R6
+32
+Z17 !s110 1651742973
+!i10b 1
+Z18 !s108 1651742973.000000
+Z19 !s90 -reportprogress|300|-work|work|C:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En_Tb.vhd|
+Z20 !s107 C:/Users/hp/Escola/Agora/LSD/P/Guiao07/Dec2_4En_Tb.vhd|
+!i113 1
+Z21 o-work work
+R12
+Astimulus
+R13
+R2
+R3
+Z22 DEx4 work 11 dec2_4en_tb 0 22 9zBJOC`G>DnVbeWCFZ^If2
+!i122 3
+l17
+Z23 L9 33
+Z24 VF47?[IcM8LI9OCQ;EcTQ02
+Z25 !s100 GzO@G10A_1_84bJLJmJ7J2
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R21
+R12
