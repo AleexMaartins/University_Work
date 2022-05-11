@@ -2,12 +2,12 @@ package Aula07;
 
 import java.util.*;
 
-public class Ex2 {
+public class Ex2b {
     public static final Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
         int op;
-        Date d1 = new DateYMD();
+        Date d1 = new DateND(0);
         do {
             printMenu();
             op = input.nextInt();
@@ -26,7 +26,6 @@ public class Ex2 {
                     break;
             }
         } while (op != 0);
-
     }
 
     public static void printMenu() {
@@ -38,13 +37,13 @@ public class Ex2 {
         System.out.println("0 - exit");
     }
 
-    public static DateYMD setNewDate() {
+    public static DateND setNewDate() {
         System.out.println("Day: ");
         int day = input.nextInt();
         System.out.println("Month: ");
         int month = input.nextInt();
         System.out.println("Year: ");
         int year = input.nextInt();
-        return new DateYMD(day, month, year);
+        return new DateYMD(day, month, year).ymdToNd();
     }
 }

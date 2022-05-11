@@ -1,166 +1,106 @@
 package Aula07;
 
-import java.util.Scanner;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 
-public class DateYMD {
-    public static final Scanner input = new Scanner(System.in);
-    private int day;
-    private int month;
-    private int year;
+public class DateYMD extends Date {
 
-    DateYMD() {
-        System.out.print("Year: "); // CB deve alterar incluir print para month e day!
-        year = input.nextInt();
-
-        do {
-            System.out.print("Month: ");
-            month = input.nextInt();
-
-            if (!validMonth(month))
-                System.out.println("Error! Insert a valid month: ");// erro
-        } while (!validMonth(month));
-
-        do {
-            System.out.print("Day: ");
-            day = input.nextInt();
-
-            if (!valid(day, month, year))
-                System.out.println("Error! Insert a valid day: ");
-        } while (!valid(day, month, year));
-        System.out.println(this); // CB
-
-    }
+    private int day, month, year;
 
     public DateYMD(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        if (valid(day, month, year)) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+    }
 
+    public DateYMD() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDateTime now = LocalDateTime.now();
+        this.day = Integer.parseInt(dtf.format(now).split("/")[2]);
+        this.month = Integer.parseInt(dtf.format(now).split("/")[1]);
+        this.year = Integer.parseInt(dtf.format(now).split("/")[0]);
+    }
+
+    public void decrement() {
+        day--;
+        if (day == 0) {
+            month--;
+            if (!validMonth(month)) {
+                month = 12;
+                year--;
+            }
+            day = monthDays(month, year);
+        }
+    }
+
+    public void increment() {
+        day++;
+        if (!valid(day, month, year)) {
+            month++;
+            day = 1;
+            if (!valid(day, month, year)) {
+                year++;
+                month = 1;
+            }
+        }
     }
 
     public void set(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        if (valid(day, month, year)) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
     }
 
-    public void increment(int days) {
-        while (days > 0) {
-            if (this.day == monthDays(this.month, this.year)) {
-                this.day = 1;
-                if (this.month == 12) {
-                    this.month = 1;
-                    this.year++;
-                } else {
-                    this.month++;
-                }
-            } else {
-                this.day++;
+    public DateND ymdToNd() {
+        int days = 0;
+        DateYMD temp = new DateYMD(day, month, year);
+        if (!valid(day, month, year)) {
+            return new DateND(0);
+        }
+        if (year >= 2000 && month >= 1 && day >= 1) {
+            while (temp.getYear() != 2000 || temp.getDay() != 1 || temp.getMonth() != 1) {
+                temp.decrement();
+                days++;
             }
-            days--;
-        }
-    }
-
-    public void decrement(int days) {
-        while (days > 0) {
-            if (this.day == 1) {
-                if (this.month == 1) {
-                    this.month = 12;
-                    this.year--;
-                } else {
-                    this.month--;
-                }
-                this.day = monthDays(this.month, this.year);
-            } else {
-                this.day--;
+        } else {
+            while (temp.getYear() != 2000 || temp.getDay() != 1 || temp.getMonth() != 1) {
+                temp.increment();
+                days--;
             }
-            days--;
         }
-    }
-
-    public static boolean validMonth(int month) {
-        if (month < 1 || month > 12) {
-            System.out.println("INVALID MONTH");
-            return false;
-        }
-        return true;
-    }
-    /*
-     * //CB: a versão do java que tenho instalada aina não suporta mais do que uma
-     * opção no switch case...
-     * public static int monthDays(int month, int year) {
-     * Boolean leap = leapYear(year);
-     * int numDias = 0;
-     * switch (month) {
-     * case 1, 3, 5, 7, 8, 10, 12:
-     * numDias = 31;
-     * return numDias;
-     * 
-     * case 2:
-     * if (leap)
-     * numDias = 29;
-     * numDias = 28;
-     * 
-     * return numDias;
-     * default:
-     * numDias = 30;
-     * return numDias;
-     * 
-     * }
-     * 
-     * }
-     */
-
-    public static int monthDays(int month, int year) {
-        Boolean leap = leapYear(year);
-        int numDias = 0;
-        switch (month) {
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
-                numDias = 31;
-                return numDias;
-
-            case 2:
-                if (leap)
-                    numDias = 29;
-                numDias = 28;
-
-                return numDias;
-            default:
-                numDias = 30;
-                return numDias;
-
-        }
-
-    }
-
-    public static Boolean leapYear(int year) {
-
-        if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))
-            return true;
-
-        return false;
-    }
-
-    public static Boolean valid(int day, int month, int year) {
-        // verificar mes
-        if (validMonth(month) == false)
-            return false;
-        // verificar dia
-        if (day < 0 || day > monthDays(month, year))
-            return false;
-
-        return true;
+        return new DateND(days);
     }
 
     @Override
-    public String toString() { // CB: este método deve ser um método aplicado ao objeto e não um método
-                               // estático
+    public String toString() {
         return String.format("%04d-%02d-%02d", year, month, day);
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
