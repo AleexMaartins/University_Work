@@ -16,5 +16,29 @@ public class PesadoMecadorias extends Pesado {
     public void setCargaMaxima(int newCargaMaxima) {
         this.cargaMaxima = newCargaMaxima;
     }
+    @Override
+    public String toString() {
+        return super.toString() + "PesadoMercadorias [cargaMaxima=" + cargaMaxima + "]";
+    }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + cargaMaxima;
+        return result;
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        PesadoMecadorias other = (PesadoMecadorias) obj;
+        if (cargaMaxima != other.cargaMaxima)
+            return false;
+        return super.equals(obj) && true;
+    }
 }

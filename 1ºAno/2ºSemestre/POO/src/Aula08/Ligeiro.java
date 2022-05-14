@@ -1,6 +1,6 @@
 package Aula08;
 
-abstract class Ligeiro extends Veiculo {
+public class Ligeiro extends Veiculo {
     private int nrQuadro;
     private int capBagageira;
 
@@ -9,7 +9,11 @@ abstract class Ligeiro extends Veiculo {
         this.nrQuadro = nrQuadro;
         this.capBagageira = capBagageira;
     }
-
+    @Override
+    public String toString() {
+        return super.toString() + "Ligeiro [capacidadeBagageira=" + capBagageira + ", numQuadro=" + nrQuadro
+                + "] ";
+    }
     public int getNrQuadro() {
         return this.nrQuadro;
     }
@@ -25,5 +29,28 @@ abstract class Ligeiro extends Veiculo {
     public void setCapBagageira(int newCapBagageira) {
         this.capBagageira = newCapBagageira;
     }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + capBagageira;
+        result = prime * result + nrQuadro;
+        return result;
+    }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Ligeiro other = (Ligeiro) obj;
+        if (capBagageira != other.capBagageira)
+            return false;
+        if (nrQuadro != other.nrQuadro)
+            return false;
+        return super.equals(obj) && true;
+    }
 }
