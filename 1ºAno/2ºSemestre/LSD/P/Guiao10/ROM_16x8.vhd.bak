@@ -1,0 +1,71 @@
+library ieee;
+
+use ieee.std_logic_1164.all;
+
+entity rom is
+
+port (ce, oe : in std_logic;
+
+		address: in std_logic_vector(3 downto 0);
+
+		dataOut: out std_logic_vector(7 downto 0));
+
+end rom;
+
+architecture rom_a of rom is
+
+begin
+
+process (ce, oe, addr)
+
+begin
+
+if (ce = '1') and (oe = '1') then
+
+case inpt is
+
+when "0000" => q <= "00000001";
+
+when "0001" => q <= "00000010";
+
+when "0010" => q <= "00000100";
+
+when "0011" => q <= "00001000";
+
+when "0100" => q <= "00010000";
+
+when "0101" => q <= "00100000";
+
+when "0110" => q <= "01000000";
+
+when "0111" => q <= "10000000";
+
+when "1000" => q <= "00000001";
+
+when "1001" => q <= "00000010";
+
+when "1010" => q <= "00000100";
+
+when "1011" => q <= "00001000";
+
+when "1100" => q <= "00010000";
+
+when "1101" => q <= "00100000";
+
+when "1110" => q <= "01000000";
+
+when "1111" => q <= "10000000";
+
+when others => q <= null;
+
+end case;
+
+else
+
+q <= "ZZZZZZZZ";
+
+end if;
+
+end process;
+
+end rom_a;
