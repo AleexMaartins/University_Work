@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ROM_Demo
-Thu Jun 02 11:07:52 2022
+Thu Jun 09 09:51:59 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -43,10 +43,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 02 11:07:52 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 09 09:51:59 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ROM_Demo                                    ;
-; Top-level Entity Name              ; ROM_16x8                                    ;
+; Top-level Entity Name              ; ROM_Demo                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; 7                                           ;
 ;     Total combinational functions  ; 7                                           ;
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; ROM_16x8           ; ROM_Demo           ;
+; Top-level entity name                                            ; ROM_Demo           ; ROM_Demo           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -162,54 +162,56 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
-; ROM_16x8.vhd                     ; yes             ; User VHDL File  ; C:/Users/hp/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/P/Guiao10/ROM_16x8.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
+; ROM_16x8.vhd                     ; yes             ; User VHDL File                     ; C:/Users/hp/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/P/Guiao10/ROM_16x8.vhd ;         ;
+; ROM_Demo.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/hp/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/P/Guiao10/ROM_Demo.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 7                ;
-;                                             ;                  ;
-; Total combinational functions               ; 7                ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 0                ;
-;     -- 3 input functions                    ; 7                ;
-;     -- <=2 input functions                  ; 0                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 7                ;
-;     -- arithmetic mode                      ; 0                ;
-;                                             ;                  ;
-; Total registers                             ; 0                ;
-;     -- Dedicated logic registers            ; 0                ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 12               ;
-;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; address[0]~input ;
-; Maximum fan-out                             ; 7                ;
-; Total fan-out                               ; 40               ;
-; Average fan-out                             ; 1.29             ;
-+---------------------------------------------+------------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 7           ;
+;                                             ;             ;
+; Total combinational functions               ; 7           ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 0           ;
+;     -- 3 input functions                    ; 7           ;
+;     -- <=2 input functions                  ; 0           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 7           ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 0           ;
+;     -- Dedicated logic registers            ; 0           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 12          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[2]~input ;
+; Maximum fan-out                             ; 7           ;
+; Total fan-out                               ; 40          ;
+; Average fan-out                             ; 1.29        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |ROM_16x8                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |ROM_16x8           ; ROM_16x8    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
+; |ROM_Demo                  ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |ROM_Demo               ; ROM_Demo    ; work         ;
+;    |ROM_16x8:inst|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ROM_Demo|ROM_16x8:inst ; ROM_16x8    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -259,7 +261,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Jun 02 11:07:40 2022
+    Info: Processing started: Thu Jun 09 09:51:45 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ROM_Demo -c ROM_Demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -268,22 +270,23 @@ Info (12021): Found 2 design units, including 1 entities, in source file rom_16x
     Info (12023): Found entity 1: ROM_16x8 File: C:/Users/hp/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/P/Guiao10/ROM_16x8.vhd Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file rom_demo.bdf
     Info (12023): Found entity 1: ROM_Demo
-Info (12127): Elaborating entity "ROM_16x8" for the top level hierarchy
+Info (12127): Elaborating entity "ROM_Demo" for the top level hierarchy
+Info (12128): Elaborating entity "ROM_16x8" for hierarchy "ROM_16x8:inst"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "dataOut[7]" is stuck at GND File: C:/Users/hp/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/P/Guiao10/ROM_16x8.vhd Line: 7
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "address[3]" File: C:/Users/hp/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/P/Guiao10/ROM_16x8.vhd Line: 6
+    Warning (15610): No output dependent on input pin "SW[3]"
 Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 8 output pins
     Info (21061): Implemented 7 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Thu Jun 02 11:07:52 2022
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Thu Jun 09 09:51:59 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:30
 
 

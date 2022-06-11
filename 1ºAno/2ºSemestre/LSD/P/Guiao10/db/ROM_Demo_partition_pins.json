@@ -4,43 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "dataOut[0]",
+					"name" : "LEDG[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dataOut[1]",
+					"name" : "LEDG[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dataOut[2]",
+					"name" : "LEDG[4]",
 					"strict" : false
 				},
 				{
-					"name" : "dataOut[3]",
+					"name" : "LEDG[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dataOut[4]",
+					"name" : "LEDG[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dataOut[5]",
+					"name" : "LEDG[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dataOut[6]",
+					"name" : "LEDG[0]",
 					"strict" : false
 				},
 				{
-					"name" : "address[0]",
+					"name" : "SW[2]",
 					"strict" : false
 				},
 				{
-					"name" : "address[2]",
+					"name" : "SW[1]",
 					"strict" : false
 				},
 				{
-					"name" : "address[1]",
+					"name" : "SW[0]",
 					"strict" : false
 				}
 			]

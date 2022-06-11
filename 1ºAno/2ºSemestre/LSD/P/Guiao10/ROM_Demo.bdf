@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 96 144 264 160)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[3..0]" (rect 5 0 49 12)(font "Arial" ))
+	(text "SW[3..0]" (rect 5 0 48 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 	(output)
 	(rect 464 144 640 160)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
-	(text "LEDR[7..0]" (rect 90 0 139 17)(font "Intel Clear" ))
+	(text "LEDG[7..0]" (rect 90 0 139 17)(font "Intel Clear" ))
 	(pt 0 8)
 	(drawing
 		(line (pt 0 8)(pt 52 8))
@@ -52,6 +52,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 640 160 704 184))
 )
 (symbol
 	(rect 264 120 464 200)

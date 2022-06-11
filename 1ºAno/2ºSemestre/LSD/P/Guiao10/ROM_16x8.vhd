@@ -14,7 +14,7 @@ architecture Behavioral of ROM_16x8 is
 	"00001000", "00010000", "00100000", "01000000",
 	"00000000", "00000001", "00000010", "00000100",
 	"00001000", "00010000", "00100000", "01000000");
-	--Nao sei se se pode repetir valores mas no ROM do projeto 256x8 repete por isso vou fazer o mesmo
+	
 begin
 	dataOut <= c_memory(to_integer(unsigned(address)));
 end Behavioral;

@@ -1,7 +1,7 @@
-Fitter Status : Successful - Thu Jun 02 11:08:06 2022
+Fitter Status : Successful - Thu Jun 09 09:52:13 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : ROM_Demo
-Top-level Entity Name : ROM_16x8
+Top-level Entity Name : ROM_Demo
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final

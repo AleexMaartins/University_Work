@@ -1,0 +1,18 @@
+Info: Start Nativelink Simulation process
+Error : Can't open file -- C:/Users/hp/Escola/GitHub/University_Work/1?Ano/2?Semestre/LSD/P/Guiao10/Parte2/RAM_1P_16_8.vhd
+can not find channel named "couldn't open "C:/Users/hp/Escola/GitHub/University_Work/1?Ano/2?Semestre/LSD/P/Guiao10/Parte2/RAM_1P_16_8.vhd": no such file or directory"
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  TCL LOOKUP CHANNEL {couldn't open "C:/Users/hp/Escola/GitHub/University_Work/1?Ano/2?Semestre/LSD/P/Guiao10/Parte2/RAM_1P_16_8.vhd": no such file or directory}
+Nativelink TCL script failed with errorInfo:  can not find channel named "couldn't open "C:/Users/hp/Escola/GitHub/University_Work/1?Ano/2?Semestre/LSD/P/Guiao10/Parte2/RAM_1P_16_8.vhd": no such file or directory"
+    while executing
+"eof $file_id "
+    (procedure "get_ip_info" line 20)
+    invoked from within
+"get_ip_info $full_file_name"
+    (procedure "run_eda_simulation_tool" line 194)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"
