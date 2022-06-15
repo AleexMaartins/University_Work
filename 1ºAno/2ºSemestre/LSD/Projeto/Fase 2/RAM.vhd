@@ -5,10 +5,10 @@ use IEEE.NUMERIC_STD.all;
 entity RAM is
 port(	clk 	: in std_logic;
 		writeEnable : in std_logic;	
-		writeData	: in std_logic_vector(7 downto 0); --resultado da ari unit
-		address 		: in std_logic_vector(7 downto 0); --mesmo counter da rom
-		RESET_RAM	: in std_logic;						  --reset diferente dos outros
-		DataOut 	: out std_logic_vector(7 downto 0));  -- nao sei quantos bits é mas devem ser estes
+		writeData	: in std_logic_vector(7 downto 0); 		--resultado da ari unit
+		address 		: in std_logic_vector(7 downto 0); 		--mesmo counter da rom
+		RESET_RAM	: in std_logic;						  	  --reset diferente dos outros
+		DataOut 		: out std_logic_vector(7 downto 0));  -- nao sei quantos bits é mas devem ser estes
 end RAM;
 
 architecture Behavioral of RAM is

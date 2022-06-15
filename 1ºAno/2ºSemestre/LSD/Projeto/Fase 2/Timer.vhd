@@ -1,31 +1,35 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-use IEEE.NUMERIC_STD.all;
+library ieee;
+use ieee.std_logic_1164.all;
 
 entity Timer is
-	generic (div	: natural := 2);
-	port (clkIn		: in std_logic;
-			clkOut	: out std_logic);
+generic(K : positive := 5);
+	port( clk : in std_logic;
+			start : in std_logic;
+			delay : out std_logic);
+			
 end Timer;
 
 architecture Behavioral of Timer is
-	
-	signal s_counter	: natural;
-	signal s_halfWay	: natural  := (div/2)-1;
-	
-begin 
-	process (clkIn)
-	begin
-		if (rising_edge (clkIn)) then
-			if (s_counter = s_halfWay) then 
-				clkOut 		<= '1';
-				s_counter 	<= s_counter + 1;
-			elsif (s_counter = div-1) then
-				clkOut 		<= '0';
-				s_counter 	<= 0;
-			else 
-				s_counter 	<= s_counter +1;
-			end if;
-		end if;
-	end process;
+	signal s_count : integer := 0;
+		begin
+			assert(K >= 2);
+				process(clk)
+					begin
+						if (rising_edge(clk)) then
+							if (s_count = 0) then
+								if (start = '1') then
+									s_count <= s_count + 1;
+								end if;
+								delay <= '0';
+							else
+								if (s_count = (K - 1)) then
+									delay <= '1';
+									s_count <= 0;
+								else
+									delay <= '0';
+									s_count <= s_count + 1;
+								end if;
+							end if;
+						end if;
+				end process;
 end Behavioral;
