@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Jun 11 16:25:30 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : ProjetoAlex_Bruno
+Top-level Entity Name : RegisterBank
+Family : Cyclone IV E
+Total logic elements : 32
+    Total combinational functions : 0
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 64
+Total virtual pins : 0
+Total memory bits : 512
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

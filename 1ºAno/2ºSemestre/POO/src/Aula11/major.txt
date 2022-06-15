@@ -1,1 +1,174 @@
-Construa um programa que leia um ficheiro de texto e que conte todosos pares de palavras encontrados no ficheiro e o número de ocorrências de cada par.
+Triste Fim de Policarpo Quaresma 
+Lima Barreto 
+
+PRIMEIRA PARTE 
+I 
+A LIÇÃO DE VIOLÃO 
+Como de hábito, Policarpo Quaresma, mais conhecido por Major 
+Quaresma, bateu em casa às quatro e quinze da tarde. Havia mais de 
+vinte anos que isso acontecia. Saindo do Arsenal de Guerra, onde era 
+subsecretário, bongava pelas confeitarias algumas frutas, comprava 
+um queijo, às vezes, e sempre o pão da padaria francesa. 
+Não gastava nesses passos nem mesmo uma hora, de forma que, às três 
+e quarenta, por ai assim, tomava o bonde, sem erro de um minuto, ia 
+pisar a soleira da porta de sua casa, numa rua afastada de São 
+Januário, bem exatamente às quatro e quinze, como se fosse a 
+aparição de um astro, um eclipse, enfim um fenômeno matematicamente 
+determinado, previsto e predito. 
+A vizinhança já lhe conhecia os hábitos e tanto que, na casa do 
+Capitão Cláudio, onde era costume jantar-se aí pelas quatro e meia, 
+logo que o viam passar, a dona gritava à criada: “Alice, olha que 
+são horas; o Major Quaresma já passou.” 
+E era assim todos os dias, há quase trinta anos. Vivendo em casa
+própria e tendo outros rendimentos além do seu ordenado, o Major 
+Quaresma podia levar um trem de vida superior ao seus recursos 
+burocráticos, gozando, por parte da vizinhança, da consideração e 
+respeito de homem abastado. 
+Não recebia ninguém, vivia num isolamento monacal, embora fosse 
+cortês com os vizinhos que o julgavam esquisito e misantropo. Se não 
+tinha amigos na redondeza, não tinha inimigos, e a única desafeição 
+que merecera, fora a do doutor Segadas, um clínico afamado no lugar, 
+que não podia admitir que Quaresma tivesse livros: “Se não era 
+formado, para quê? Pedantismo!” 
+O subsecretário não mostrava os livros a ninguém, mas acontecia que, 
+quando se abriam as janelas da sala de sua livraria, da rua 
+poder-se-iam ver as estantes pejadas de cima a baixo. 
+Eram esses os seus hábitos; ultimamente, porém, mudara um pouco; e 
+isso provocava comentários no bairro. Além do compadre e da filha, 
+as únicas pessoas que o visitavam até então, nos últimos dias, era 
+visto entrar em sua casa, três vezes por semana e em dias certos, um 
+senhor baixo, magro, pálido, com um violão agasalhado numa bolsa de 
+camurça. Logo pela primeira vez o caso intrigou a vizinhança. Um 
+violão em casa tão respeitável! Que seria? 
+E, na mesma tarde, urna das mais lindas vizinhas do major convidou 
+uma amiga, e ambas levaram um tempo perdido, de cá para lá, a 
+palmilhar o passeio, esticando a cabeça, quando passavam diante da 
+janela aberta do esquisito subsecretário. 
+Não foi inútil a espionagem. Sentado no sofá, tendo ao lado o tal 
+sujeito, empunhando o “pinho” na posição de tocar, o major, 
+atentamente, ouvia: “Olhe, major, assim”. E as cordas vibravam 
+vagarosamente a nota ferida; em seguida, o mestre aduzia: “É ‘ré’, 
+aprendeu?” 
+Mas não foi preciso pôr na carta; a vizinhança concluiu logo que o 
+major aprendia a tocar violão. Mas que coisa? Um homem tão sério 
+metido nessas malandragens! 
+Uma tarde de sol - sol de março, forte e implacável - aí pelas 
+cercanias das quatro horas, as janelas de uma erma rua de São 
+Januário povoaram-se rápida e repentinamente, de um e de outro lado. 
+Até da casa do general vieram moças à janela! Que era? Um batalhão? 
+Um incêndio? Nada disto: o Major Quaresma, de cabeça baixa, com 
+pequenos passos de boi de carro, subia a rua, tendo debaixo do braço 
+um violão impudico.
+É verdade que a guitarra vinha decentemente embrulhada em papel, mas 
+o vestuário não lhe escondia inteiramente as formas. À vista de tão 
+escandaloso fato, a consideração e o respeito que o Major Policarpo 
+Quaresma merecia nos arredores de sua casa, diminuíram um pouco. 
+Estava perdido, maluco, diziam. Ele, porém, continuou serenamente 
+nos seus estudos, mesmo porque não percebeu essa diminuição. 
+Quaresma era um homem pequeno, magro, que usava pince-nez, olhava 
+sempre baixo, mas, quando fixava alguém ou alguma coisa, os seus 
+olhos tomavam, por detrás das lentes, um forte brilho de penetração, 
+e era como se ele quisesse ir à alma da pessoa ou da coisa que 
+fixava. 
+Contudo, sempre os trazia baixos, como se se guiasse pela ponta do 
+cavanhaque que lhe enfeitava o queixo. Vestia-se sempre de fraque, 
+preto, azul, ou de cinza, de pano listrado, mas sempre de fraque, e 
+era raro que não se cobrisse com uma cartola de abas curtas e muito 
+alta, feita segundo um figurino antigo de que ele sabia com precisão 
+a época. 
+Quando entrou em casa, naquele dia, foi a irmã quem lhe abriu a 
+porta, perguntando: 
+- Janta já? 
+- Ainda não. Espere um pouco o Ricardo que vem jantar hoje consoco. 
+- Policarpo, você precisa tomar juízo. Um homem de idade, com 
+posição, respeitável, como você é, andar metido com esse seresteiro, 
+um quase capadócio - não é bonito! 
+O major descansou o chapéu-de-sol - um antigo chapéu-de-sol, com a 
+haste inteiramente de madeira, e um cabo de volta, incrustado de 
+<pequenos losangos de madrepérola - e respondeu: 
+- Mas você está muito enganada, mana. É preconceito supor-se que 
+todo homem que toca violão é um desclassificado. A modinha é a mais 
+genuína expressão da poesia nacional e o violão é o instrumento que 
+ela pede. Nós é que temos abandonado o gênero, mas ele já esteve em 
+honra, em Lisboa, no século passado, com o Padre Caldas, que teve um 
+auditório de fidalgas. Beckford, um inglês notável, muito o elogia. 
+- Mas isso foi em outro tempo; agora... 
+- Que tem isso, Adelaide? Convém que nós não deixemos morrer as 
+nossas tradições, os usos genuinamente nacionais... 
+- Bem, Policarpo, eu não quero contrariar você; continue lá com as 
+suas manias. 
+O major entrou para um aposento próximo, enquanto sua irmã seguia em
+direitura ao interior da casa. Quaresma despiu-se, lavou-se, enfiou 
+a roupa de casa, veio para a biblioteca, sentou-se a uma cadeira de 
+balanço, descansando. 
+Estava num aposento vasto, com janelas para uma rua lateral, e todo 
+ele era forrado de estantes de ferro. 
+Havia perto de dez, com quatro prateleiras, fora as pequenas com os 
+livros de maior tomo. Quem examinasse vagarosamente aquela grande 
+coleção de livros havia de espantar-se ao perceber o espírito que 
+presidia a sua reunião. 
+Na ficção, havia unicamente autores nacionais ou tidos como tais: o 
+Bento Teixeira, da Prosopopéia; o Gregório de Matos, o Basílio da 
+Gama, o Santa Rita Durão, o José de Alencar (todo), o Macedo, o 
+Gonçalves Dias (todo), além de muitos outros. Podia-se afiançar que 
+nem um dos autores nacionais ou nacionalizados de oitenta ora lá 
+faltava nas estantes do major. 
+De História do Brasil, era farta a messe: os cronistas, Gabriel 
+Soares, Gandavo; e Rocha Pita, Frei Vicente do Salvador, Armitage, 
+Aires do Casal, Pereira da Silva, Handelmann (Geschichte von 
+Brasilien), Melo Morais, Capistrano de Abreu, Southey, Varnhagen, 
+além de outros mais raros ou menos famosos. Então no tocante a 
+viagens e explorações, que riqueza! Lá estavam Hans Staden, o Jean 
+de Léry, o Saint-Hilaire, o Martius, o Príncipe de Neuwied, o John 
+Mawe, o von Eschwege, o Agassiz, Couto de Magalhães e se se 
+encontravam também Darwin, Freycinet, Cook, Bougainville e até o 
+famoso Pigafetta, cronista da viagem de Magalhães, é porque todos 
+esses últimos viajantes tocavam no Brasil, resumida ou amplamente. 
+Além destes, havia livros subsidiários: dicionários, manuais, 
+enciclopédias, compêndios, em vários idiomas. 
+Vê-se assim que a sua predileção pela poética de Porto Alegre e 
+Magalhães não lhe vinha de uma irremediável ignorância das línguas 
+literárias da Europa; ao contrário, o major conhecia bem 
+sofrivelmente francês, inglês e alemão; e se não falava tais 
+idiomas, lia-os e traduzia-os corretamente. A razão tinha que ser 
+encontrada numa disposição particular de seu espírito, no forte 
+sentimento que guiava sua vida. Policarpo era patriota. Desde moço, 
+aí pelos vinte anos, o amor da Pátria tomou-o todo inteiro. Não fora 
+o amor comum, palrador e vazio; fora um sentimento sério, grave e 
+absorvente. Nada de ambições políticas ou administrativas; o que 
+Quaresma pensou, ou melhor: o que o patriotismo o fez pensar, foi
+num conhecimento inteiro do Brasil, levando-o a meditações sobre os 
+seus recursos, para depois então apontar os remédios, as medidas 
+progressivas, com pleno conhecimento de causa. 
+Não se sabia bem onde nascera, mas não fora decerto em São Paulo, 
+nem no Rio Grande do Sul, nem no Pará. Errava quem quisesse 
+encontrar nele qualquer regionalismo; Quaresma era antes de tudo 
+brasileiro. Não tinha predileção por esta ou aquela parte de seu 
+país, tanto assim que aquilo que o fazia vibrar de paixão não eram 
+só os pampas do Sul com o seu gado, não era o café de São Paulo, não 
+eram o ouro e os diamantes de Minas, não era a beleza da Guanabara, 
+não era a altura da Paulo Afonso, não era o estro de Gonçalves Dias 
+ou o ímpeto de Andrade Neves - era tudo isso junto, fundido, 
+reunido, sob a bandeira estrelada do Cruzeiro. 
+Logo aos dezoito anos quis fazer-se militar; mas a junta de saúde 
+julgou-o incapaz. Desgostou-se, sofreu, mas não maldisse a Pátria. O 
+ministério era liberal, ele se fez conservador e continuou mais do 
+que nunca a amar a “terra que o viu nascer”. Impossibilitado de 
+evoluir-se sob os dourados do exército, procurou a administração e 
+dos seus ramos escolheu o militar. 
+Era onde estava bem. No meio de soldados, de canhões, de veteranos, 
+de papelada inçada de quilos de pólvora, de nomes de fuzis e termos 
+técnicos de artilharia, aspirava diariamente aquele hálito de 
+guerra, de bravura, de vitória, de triunfo, que é bem o hálito da Pátria. 
+Durante os lazeres burocráticos, estudou, mas estudou a Pátria, nas 
+suas riquezas naturais, na sua história, na sua geografia, na sua 
+literatura e na sua política. Quaresma sabia as espécies de 
+minerais, vegetais e animais que o Brasil continha; sabia o valor do 
+ouro, dos diamantes exportados por Minas, as guerras holandesas, as 
+batalhas do Paraguai, as nascentes e o curso de todos os rios. 
+Defendia com azedume e paixão a proeminência do Amazonas sobre todos 
+os demais rios do mundo. Para isso ia até ao crime de amputar alguns 
+quilômetros ao Nilo e era com este rival do “seu” rio que ele mais 
+implicava. Ai de quem o citasse na sua frente! Em geral, calmo e 
+delicado, o major ficava agitado e malcriado, quando se discutia a 
+extensão do Amazonas em face da do Nilo.

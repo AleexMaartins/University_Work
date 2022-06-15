@@ -267,7 +267,8 @@ architecture Behavioral of TriangSignal_ROM_256x8 is
 	"10110100",
 	"10111000",
 	"10111100",
-	"11000000");
+	"11000000",
+	);
 
 begin
    dataOut <= c_memory(to_integer(unsigned(address)));
