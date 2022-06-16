@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProjetoAlex_Bruno
-Wed Jun 15 20:08:58 2022
+Wed Jun 15 22:41:25 2022
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -36,10 +36,10 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Jun 15 20:08:58 2022           ;
+; Analysis & Synthesis Status        ; Failed - Wed Jun 15 22:41:25 2022           ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; ProjetoAlex_Bruno                           ;
-; Top-level Entity Name              ; Projeto_Demo                                ;
+; Top-level Entity Name              ; RAM                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Total logic elements               ; N/A until Partition Merge                   ;
 ;     Total combinational functions  ; N/A until Partition Merge                   ;
@@ -59,7 +59,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; Projeto_Demo       ; ProjetoAlex_Bruno  ;
+; Top-level entity name                                                      ; RAM                ; ProjetoAlex_Bruno  ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -161,36 +161,36 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Jun 15 20:08:51 2022
+    Info: Processing started: Wed Jun 15 22:41:16 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjetoAlex_Bruno -c ProjetoAlex_Bruno
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file triangsignal_rom_256x8.vhd
-    Info (12022): Found design unit 1: TriangSignal_ROM_256x8-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/TriangSignal_ROM_256x8.vhd Line: 10
-    Info (12023): Found entity 1: TriangSignal_ROM_256x8 File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/TriangSignal_ROM_256x8.vhd Line: 5
+    Info (12022): Found design unit 1: TriangSignal_ROM_256x8-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/TriangSignal_ROM_256x8.vhd Line: 10
+    Info (12023): Found entity 1: TriangSignal_ROM_256x8 File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/TriangSignal_ROM_256x8.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pulsegenerator.vhd
-    Info (12022): Found design unit 1: PulseGenerator-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/PulseGenerator.vhd Line: 11
-    Info (12023): Found entity 1: PulseGenerator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/PulseGenerator.vhd Line: 5
+    Info (12022): Found design unit 1: PulseGenerator-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/PulseGenerator.vhd Line: 11
+    Info (12023): Found entity 1: PulseGenerator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/PulseGenerator.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file address_generator.vhd
-    Info (12022): Found design unit 1: Address_Generator-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/Address_Generator.vhd Line: 12
-    Info (12023): Found entity 1: Address_Generator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/Address_Generator.vhd Line: 5
+    Info (12022): Found design unit 1: Address_Generator-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/Address_Generator.vhd Line: 12
+    Info (12023): Found entity 1: Address_Generator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/Address_Generator.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
-    Info (12022): Found design unit 1: RAM-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/RAM.vhd Line: 14
-    Info (12023): Found entity 1: RAM File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/RAM.vhd Line: 5
+    Info (12022): Found design unit 1: RAM-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/RAM.vhd Line: 14
+    Info (12023): Found entity 1: RAM File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/RAM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: Timer-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/Timer.vhd Line: 12
-    Info (12023): Found entity 1: Timer File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/Timer.vhd Line: 4
-Error (10500): VHDL syntax error at Projeto_Demo.vhd(36) near text ",";  expecting "(", or an identifier, or  unary operator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/Projeto_Demo.vhd Line: 36
-Error (10500): VHDL syntax error at Projeto_Demo.vhd(37) near text ",";  expecting "(", or an identifier, or  unary operator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/Projeto_Demo.vhd Line: 37
-Error (10500): VHDL syntax error at Projeto_Demo.vhd(38) near text ",";  expecting "(", or an identifier, or  unary operator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/Projeto_Demo.vhd Line: 38
+    Info (12022): Found design unit 1: Timer-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/Timer.vhd Line: 12
+    Info (12023): Found entity 1: Timer File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/Timer.vhd Line: 4
+Error (10500): VHDL syntax error at Projeto_Demo.vhd(36) near text ",";  expecting "(", or an identifier, or  unary operator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/Projeto_Demo.vhd Line: 36
+Error (10500): VHDL syntax error at Projeto_Demo.vhd(37) near text ",";  expecting "(", or an identifier, or  unary operator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/Projeto_Demo.vhd Line: 37
+Error (10500): VHDL syntax error at Projeto_Demo.vhd(38) near text ",";  expecting "(", or an identifier, or  unary operator File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/Projeto_Demo.vhd Line: 38
 Info (12021): Found 0 design units, including 0 entities, in source file projeto_demo.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file arithmeticunit.vhd
-    Info (12022): Found design unit 1: ArithmeticUnit-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/ArithmeticUnit.vhd Line: 12
-    Info (12023): Found entity 1: ArithmeticUnit File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 3/ArithmeticUnit.vhd Line: 5
+    Info (12022): Found design unit 1: ArithmeticUnit-Behavioral File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/ArithmeticUnit.vhd Line: 12
+    Info (12023): Found entity 1: ArithmeticUnit File: C:/Users/Alex/Escola/GitHub/University_Work/1ºAno/2ºSemestre/LSD/Projeto/Fase 4/ArithmeticUnit.vhd Line: 5
 Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
     Error: Peak virtual memory: 4774 megabytes
-    Error: Processing ended: Wed Jun 15 20:08:58 2022
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:17
+    Error: Processing ended: Wed Jun 15 22:41:25 2022
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:19
 
 

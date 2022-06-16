@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Failed - Wed Jun 15 20:08:58 2022
+Analysis & Synthesis Status : Failed - Wed Jun 15 22:41:25 2022
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : ProjetoAlex_Bruno
-Top-level Entity Name : Projeto_Demo
+Top-level Entity Name : RAM
 Family : Cyclone IV E
 Total logic elements : N/A until Partition Merge
     Total combinational functions : N/A until Partition Merge
