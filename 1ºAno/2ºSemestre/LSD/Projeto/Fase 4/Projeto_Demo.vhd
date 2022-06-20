@@ -16,8 +16,11 @@ architecture Shell of Projeto_Demo is
     signal s_delay  	: std_logic;
 	 signal s_dataOut : std_logic_vector(7 downto 0);
 	 signal s_result 	: std_logic_vector(7 downto 0);
+	 signal s_DataOut2 	: std_logic_vector(7 downto 0);
+	 signal s_DataOut1 	: std_logic_vector(7 downto 0);
+	 signal s_DataOut0 	: std_logic_vector(7 downto 0);
 
-begin
+	 begin
 PulseGenerator :  entity work.PulseGenerator(Behavioral)
                                 port map(	  clk => CLOCK_50,
                                             pulseOut => s_clock);
@@ -31,12 +34,21 @@ Counter :  entity work.Address_Generator(Behavioral)
 ROM : entity work.TriangSignal_ROM_256x8(Behavioral)
                         port map(	address => s_count,
                                     dataOut => LEDR);
-												
+
+RegisterBank:	entity work.RegisterBank(Behavioral)
+						port map(  WrData 	=> s_count,
+									  reset		=> not KEY(2),
+									  WE			=> s_clock,
+									  DataOut2 	=> s_DataOut2,
+									  DataOut1 	=> s_DataOut1, 
+									  DataOut0 	=>  s_DataOut0);
+									  
+									  
 ArithmeticUnit	:	entity work.ArithmeticUnit(Behavioral)
-                        port map(	operand0 => ,
-												operand1 => ,
-												operand2 => ,
-                                    result	=> s_result);
+							port map(	operand0 => s_DataOut0,
+											operand1 => s_DataOut1,
+											operand2 => s_DataOut2,
+											result	=> s_result);
 
 
 Timer: entity work.Timer(Behavioral)
