@@ -217,6 +217,11 @@ if __name__ == '__main__':
 #################################################
 
 #################################################
+#Exercicio 2.3
+
+#################################################
+
+#################################################
 #Exercicio 3.1				#***************RESOLVIDO***************
 def cabeca(lista):
 	try:
@@ -295,20 +300,51 @@ if __name__ == '__main__':
 #################################################
 
 #################################################
+#Exercicio 3.5
 
-#Exercicio 3.6							#AINDA FALTA ACABAR
-def max_min(lista):
-	if(lista == []):
+#################################################
+
+#################################################
+
+#Exercicio 3.6				#***************RESOLVIDO***************
+def mini(l):								#calcula o minimo
+	if(l == []):
 		return None
-	if len(lista) == 1:
-		return lista[0]
+	if len(l) == 1:
+		return l[0]
 	else:
-		tuple.app
-		return min(lista[0], max_min(lista[1:])) & max(lista[0], max_min(lista[1:]))
+		return min(l[0], mini(l[1:]))
 
+def maxi(l):								#calcula o maximo
+	if(l == []):
+		return None
+	if len(l) == 1:
+		return l[0]
+	else:
+		return max(l[0], maxi(l[1:]))
+			
+def max_min(l):								#cria um tuplo, chamando a funçao mini e maxi
+	if(l == []):
+		return None
+	if len(l) == 1:
+		return l[0]
+	else:
+		return mini(l), maxi(l)
+"""
 def main():
 	lista = [2, 3, 5, 7, 8, 15,1,100]
 	print(max_min(lista))
 if __name__ == '__main__':
 	main()
+"""
+#################################################
+
+#################################################
+#Exercicio 3.7
+
+#################################################
+
+#################################################
+#Exercicio 3.8
+
 #################################################
