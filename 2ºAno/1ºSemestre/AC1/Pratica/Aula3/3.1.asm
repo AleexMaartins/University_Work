@@ -26,6 +26,7 @@ for:	bge	$t2,5,efor		#while( i < 5 )
 	ble 	$t1,$0,else		#if(value > 0)
 	add 	$t0,$t0,$t1		# soma += value;
 	j	eif
+	
 else:	la	$a0,str2		#else print_string("Valor ignorado. ")
 	li	$v0,print_string
 	syscall
