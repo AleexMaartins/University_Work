@@ -43,7 +43,9 @@ class SearchDomain(ABC):
     # custo estimado de chegar de um estado a outro
     @abstractmethod
     def heuristic(self, state, goal):
-        pass
+        from cidades import Cidades
+        return Cidades.heuristic(self, state, goal)
+
 
     # test if the given "goal" is satisfied in "state"
     @abstractmethod
@@ -63,13 +65,13 @@ class SearchProblem:
 
 # Nos de uma arvore de pesquisa
 class SearchNode:
-    def __init__(self,state,parent): 
+    def __init__(self,state,parent,actionCost=None): 
         self.state = state
         self.parent = parent
         self.depth = 0 if parent == None else parent.depth + 1 # ex 2
-        self.cost = 0 if parent == None else parent.cost + SearchDomain.cost(self, self.state, (self.state, self.parent.state)) # ex 8
+        self.cost = 0 if parent == None else parent.cost + actionCost # ex 8
     def __str__(self):
-        return "(" + str(self.state) + "," + str(self.depth) + str(self.parent)  + ")" #no
+        return "no(" + str(self.state) + "," + str(self.depth) + str(self.parent)  + ")" #no
 
     def __repr__(self):
         return str(self)
@@ -93,6 +95,9 @@ class SearchTree:
     @property # ex 6
     def avg_branching(self):
         return (self.terminals + self.non_terminals - 1) / self.non_terminals
+    @property # ex 9 
+    def cost(self):
+        return self.solution.cost
 
     # obter o caminho (sequencia de estados) da raiz ate um no
     def get_path(self,node):
@@ -117,16 +122,21 @@ class SearchTree:
                 for a in self.problem.domain.actions(node.state): # por cada açao possivel neste node
                     newstate = self.problem.domain.result(node.state,a) # ver o resultado de cada açao possivel
                     if newstate not in self.get_path(node): # ex 1 -- se resultado not in path...
-                        newnode = SearchNode(newstate,node) 
+                        newnode = SearchNode(newstate,node,self.problem.domain.cost(node.state, a))
                         lnewnodes.append(newnode)
                 self.add_to_open(lnewnodes)
         return None
 
     # juntar novos nos a lista de nos abertos de acordo com a estrategia
     def add_to_open(self,lnewnodes):
+
         if self.strategy == 'breadth':
             self.open_nodes.extend(lnewnodes)
+            
         elif self.strategy == 'depth':
             self.open_nodes[:0] = lnewnodes
-        elif self.strategy == 'uniform':
-            pass
+
+        elif self.strategy == 'uniform': #ex 10
+            self.open_nodes.extend(lnewnodes)
+            self.open_nodes.sort(key = lambda x : x.cost)
+            
