@@ -10,6 +10,7 @@
 #
 
 
+from math import sqrt
 from tree_search import *
 
 class Cidades(SearchDomain):
@@ -35,7 +36,12 @@ class Cidades(SearchDomain):
         return None
         
     def heuristic(self, city, goal_city):
-        pass
+        (city_x,city_y) = cidades_portugal.coordinates.get(city)
+        (goal_city_x,goal_city_y) = cidades_portugal.coordinates.get(goal_city)
+        return sqrt((goal_city_x - city_x)**2 + (goal_city_y - city_y)**2)
+
+
+        
     def satisfies(self, city, goal_city):
         return goal_city==city
 
