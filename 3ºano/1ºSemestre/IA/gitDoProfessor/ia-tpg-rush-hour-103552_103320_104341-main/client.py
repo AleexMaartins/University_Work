@@ -5,12 +5,12 @@ import json
 import os
 
 # Next 4 lines are not needed for AI agents, please remove them from your code!
-import pygame
+#import pygame
 import websockets
 
-pygame.init()
-program_icon = pygame.image.load("data/icon2.png")
-pygame.display.set_icon(program_icon)
+#pygame.init()
+#program_icon = pygame.image.load("data/icon2.png")
+#ygame.display.set_icon(program_icon)
 
 
 async def agent_loop(server_address="localhost:8000", agent_name="student"):
