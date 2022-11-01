@@ -6,7 +6,7 @@
 # str[i]: $t4
 	.data
 	.eqv	SIZE, 20
-	.eqv 	read_int, 5
+	.eqv 	read_string, 8
 	.eqv	print_int10, 1
 str:	.space	21
 	
@@ -15,7 +15,7 @@ str:	.space	21
 main:
 	la	$a0, str
 	li	$a1, SIZE	
-	li	$v0, read_int
+	li	$v0, read_string
 	syscall				# read_string(str, SIZE)
 	
 	li	$t0, 0			# num = 0;
