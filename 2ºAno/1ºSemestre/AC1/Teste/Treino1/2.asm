@@ -22,8 +22,9 @@ main:
 	
 do:	la 	$t2,val			#t2 = val
 	sll	$t3,$t0,2		#i * 4
-	addu	$t3,$t3,$t2		#&val[i]
-	lw	$t1,0($t3)		#$t1 = val
+	addu	$t3,$t3,$t2		#&val[i]	
+	lw	$t1,0($t3)		#$t1 = val[i]
+	
 	
 	la 	$t2,val			#t2 = val
 	li 	$t4,SIZE		
@@ -33,7 +34,9 @@ do:	la 	$t2,val			#t2 = val
 	addu	$t4,$t4,$t2		#&val[i + SIZE/2]
 	lw	$t5, 0($t4)		#$t5 = val[i + SIZE/2]
 	sw	$t5,0($t3)		#val[i] = val[i + SIZE/2]
-	sw	$t1,0($t4)		#val[i + SIZE/2 = v
+	
+	sw	$t1,0($t4)		#val[i + SIZE/2] = v
+	
 	addi	$t0,$t0,1 		#i++
 	li 	$t4,SIZE		
 	srl	$t4,$t4,1		#SIZE /2

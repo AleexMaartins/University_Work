@@ -1,79 +1,72 @@
-# Mapa de registos
-# n_even: $t0
-# n_odd: $t1
-# p1: $t2
-# p2 : $t3
-# a + N: $t4
-# a : $t5
-# *p1 : $t6
-# *p1%2 : $t7
-# b+n_odd : $t8
+#faria
+# Mapa de Registos
+# n_even     : $t0
+# n_odd     : $t1
+# *p1        : $t2
+# *p2        : $t3 
 
-.eqv	N,5
-.eqv	Nx4,20
-.eqv	print_int10, 1
-.eqv	read_int, 5
+    .data
+    .eqv N, 5
+    .eqv read_int, 5
+    .eqv print_int10, 1
+a:    .space 20
+B:    .space 20 
 
-	.data
-a: 	.space	Nx4
-b:	.space 	Nx4
-	.text
-	.globl main
+    .text
+    .globl main
+main:
+    li    $t0, 0             # n_even = 0;
+    li    $t1, 0            # n_odd = 0;
+    
+    la    $t2, a            # p1 = a
 
-main:	
-	
-	la	$t2,a	#p1 = a
-	li	$t4,N		
-	sll	$t4,$t4,2
-	addu	$t4,$t4,$t2
-for0:
-	bge	$t2,$t4,efor0
-	li	$v0,read_int
-	syscall
-	sw	$v0,0($t2)	#*p1 = read_int
-	addiu	$t2,$t2,4	#p1++
-	j	for0
-	
-efor0:
-	la	$t2,a	#p1 = a
-	la	$t3,b	#p2 = b	
-		
-	
-for1:
-	li	$t4,N
-	sll	$t4,$t4,2
-	la	$t5,a
-	addu	$t4,$t4,$t5	#a + N
-	bge	$t2,$t4,efor1
-	
-	lw	$t6,0($t2)	#*p1
-	rem	$t7, $t6,1	#*p1%2
-	beq	$t7, $0,else	#*p1%2
-	sw	$t6,0($t3)	#*p2 = *p1
-	addiu	$t3,$t3,4	#p2++
-	addi	$t1,$t1,1	#n_odd+	
-		
-	j eif
-else:
-	addi	$t0,$t0,1	#n_even ++
-eif:	
-	addiu	$t2,$t2,4	#p1++
-	j 	for1
-		
-efor1:	
-	la	$t3,b		#p2 = b
-	move	$t8,$t1		#$t8 = n_odd	
-	sll	$t8,$t8,2	#n_odd * 4
-	addu	$t8,$t8,$t3	#
+    li    $t4, N            # 
+    sll    $t4, $t4, 2        #
+    addu    $t4, $t4, $t2        # $t4 = a + N
+
+for:
+    bge    $t2, $t4, endf        # for
+    
+    li    $v0, read_int
+    syscall
+    sw    $v0, 0($t2)        # *p1 = read_int()
+    
+    addiu    $t2, $t2, 4        # p1++
+    j    for
+endf:     
+    la    $t2, a
+    la    $t3, B
 for2:
-	bge	$t3,$t8,efor2
-	lw	$a0,0($t3)
-	li	$v0,print_int10
-	syscall
-	
-	addiu	$t3,$t3,4	#p2++
-	j 	for2
-	
-efor2:	
-	jr	$ra
-		
+    bge    $t2, $t4, endf2        # for
+    
+    lw    $t5, 0($t2)        # $t5 = *p1
+    rem    $t6, $t5, 2        # $t6 = *p1 % 2
+    
+if:    beqz    $t6, else
+    sw    $t5, 0($t3)        # *p2 = *p1
+    addiu    $t3, $t3, 4        # *p2++
+    addi    $t1, $t1, 1        # n_odd++
+    j     endif
+else:
+    addi    $t0, $t0, 1        # n_even++
+endif:
+    addiu    $t2, $t2, 4
+    j    for2
+    
+endf2:
+    la    $t3, B
+    sll    $t5, $t1, 2        # n_odd * 4
+    addu    $t5, $t3, $t5        # $t5 = b + n_odd
+    
+for3:
+    bge    $t3, $t5, endf3        # for
+    
+    lw    $a0, 0($t3)        #
+    li    $v0, print_int10
+    syscall                # print_int10(*p2)
+    
+    addiu    $t3, $t3, 4
+    j    for3
+    
+endf3:    
+    jr    $ra
