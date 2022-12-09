@@ -1,6 +1,6 @@
 """Common data structures. Can be used by any module."""
 from __future__ import annotations
-
+import time
 import math
 from dataclasses import dataclass
 
@@ -27,37 +27,38 @@ class Map:
     def __init__(self, txt: str):
         """Initialize Map from string."""
         pieces, grid, movements = txt.split(" ")
-        self.pieces = int(pieces)
-        self.movements = int(movements)
-        self.grid_size = int(math.sqrt(len(grid)))
+        self.pieces = int(pieces)        #quantidade de peças 
+        self.movements = int(movements)  #pontos         
+        self.grid_size = int(math.sqrt(len(grid)))  
+        self.grid_string = grid
         self.grid = []
 
         line = []
         for i, pos in enumerate(grid):
-            line.append(pos)
+            line.append(pos)                #pos = cada peça da grid
             if (i + 1) % self.grid_size == 0:
-                self.grid.append(line)
+                self.grid.append(line)      #line = cada linha horizontal da grid
                 line = []
 
     def __repr__(self):
         """Revert map object to string."""
-        raw = ""
-        for line in self.grid:
-            for column in line:
-                raw += column
+        
+        mapToString = []
+        for i in self.grid:
+            mapToString +=i
+        raw = "".join(mapToString)
+        
+
         return f"{self.pieces} {raw} {self.movements}"
 
     @property
     def coordinates(self):
         """Representation of ocupied map positions through tuples x,y,value."""
-        _coordinates = []
-
-        for y, line in enumerate(self.grid):
-            for x, column in enumerate(line):
-                if column != self.empty_tile:
-                    _coordinates.append((x, y, column))
+        
+        _coordinates = [(x, y, column) for y, line in enumerate(self.grid) for x, column in enumerate(line) if column != self.empty_tile]
 
         return _coordinates
+
 
     def get(self, cursor: Coordinates):
         """Return piece at cursor position."""
@@ -75,7 +76,6 @@ class Map:
             raise MapException("Blocked piece")
 
         piece_coord = self.piece_coordinates(piece)
-
         # Don't move vertical pieces sideways
         if direction.x != 0 and any([line.count(piece) == 1 for line in self.grid]):
             raise MapException("Can't move sideways")
@@ -99,61 +99,74 @@ class Map:
 
     def test_win(self):
         """Test if player_car has crossed the left most column."""
-        return any(
-            [c.x == self.grid_size -
-                1 for c in self.piece_coordinates(self.player_car)]
-        )
+        return any([c.x == self.grid_size - 1 for c in self.piece_coordinates(self.player_car)])
+    
+    # def test_win(self):
+    #     """Test if player_car has crossed the left most column."""
+    #     return any(
+    #         [c.x == self.grid_size -
+    #             1 for c in self.piece_coordinates(self.player_car)]
+    #     )
+                
 ###############Editado por nós###########################################
 
     def car_actions(self, piece: str) -> list[tuple[str, str]]:
         orientation = self.get_car_orientation(piece)
-        piece_coords: list[Coordinates] = self.piece_coordinates(piece)
         action_list = []
             
         if orientation == 'h': 
-            extremo_esquerda = piece_coords[0]
-            extremo_direita = piece_coords[-1]
-            try:
-                extremo_esquerda.x = extremo_esquerda.x - 1
-                a_esquerda = self.get(extremo_esquerda)
-                if a_esquerda == 'o':
-                   action_list.append((piece,'a'))
-            except:
-                pass
-            try:
-                extremo_direita.x = extremo_direita.x + 1
-                a_direita = self.get(extremo_direita)
-                if a_direita == 'o':
-                   action_list.append((piece,'d'))
-            except:
-                pass
-        else:   
-            extremo_cima = piece_coords[0]
-            extremo_baixo = piece_coords[-1]
-            try:
-                extremo_cima.y = extremo_cima.y - 1
-                a_cima = self.get(extremo_cima)
-                if a_cima == 'o':
-                   action_list.append((piece,'w'))
-            except:
-                pass
-            try:
-                extremo_baixo.y = extremo_baixo.y + 1
-                a_baixo = self.get(extremo_baixo)
-                if a_baixo == 'o':
-                   action_list.append((piece,'s'))
-            except:
-                pass
-                
-        return action_list
+            extremo_esquerda = self.grid_string.find(piece)
+            extremo_direita = self.grid_string.rfind(piece) 
+            if extremo_esquerda % self.grid_size != 0 :
+                a_esquerda = extremo_esquerda - 1
+                if self.grid_string[a_esquerda] == 'o':
+                    action_list.append((piece,'a'))
             
-            
-    def get_car_orientation(mapa: Map, piece: str):
-        coords = mapa.piece_coordinates(piece)
-        if coords[0].y == coords[1].y:
-            return "h"
-        return "v"
+            if (extremo_direita+1) % (self.grid_size) != 0 :
+                a_direita = extremo_direita + 1
+                if self.grid_string[a_direita] == 'o':
+                    action_list.append((piece,'d'))
 
+        else:
+            extremo_cima = self.grid_string.find(piece)
+            extremo_baixo = self.grid_string.rfind(piece) 
+            if extremo_cima >= self.grid_size :
+                a_cima = extremo_cima - self.grid_size
+                if self.grid_string[a_cima] == 'o':
+                    action_list.append((piece,'w'))
+
+            if extremo_baixo < self.grid_size**2 - self.grid_size :
+                a_baixo = extremo_baixo + self.grid_size
+                if self.grid_string[a_baixo] == 'o':
+                    action_list.append((piece,'s'))
+
+        return action_list
+         
+    def get_car_orientation(self, piece: str) -> str:
+        first: int = self.grid_string.find(piece)
+        if self.grid_string[first + 1] != piece: 
+            return "v"
+        return "h"
+        
+    def move_two(self, piece: str, direction: Coordinates):
+        """Move piece in direction fiven by a vector."""
+        if piece == self.wall_tile:
+            raise MapException("Blocked piece")
+
+        piece_coord = self.piece_coordinates(piece)
+        self.new_grid_string = self.grid_string
+        
+        def sum(a: Coordinates, b: Coordinates):
+            return Coordinates(a.x + b.x, a.y + b.y)
+
+        for pos in piece_coord:
+            self.new_grid_string = self.new_grid_string[:(self.grid_size*pos.y+pos.x)] + 'o' + self.new_grid_string[(self.grid_size*pos.y+pos.x)+1:]
+
+        for pos in piece_coord:
+            new_pos = sum(pos, direction)
+            self.new_grid_string = self.new_grid_string[:(self.grid_size*new_pos.y+new_pos.x)] + piece + self.new_grid_string[(self.grid_size*new_pos.y+new_pos.x)+1:]
+        
+        return self.new_grid_string
 
 """ TODO move to tests
 m = Map("02 ooooBoooooBoAAooBooooooooooooooooooo 14")

@@ -4,8 +4,8 @@ import getpass
 import json
 import os
 import websockets
-
-from dominio import search_path,Dominio
+import time
+from dominio import search_path
 from commonMAIS import Map, Coordinates
 
 # verificar se o cursor está num carro
@@ -48,35 +48,6 @@ def get_to_car(car, state, grid):
     elif car_coords.y < cur_coords[1]:
         return "w"
     return " "
-
-def get_key(actions,state):
-    first_action = actions[0]
-    pop = False
-    if cursor_on_car(state["cursor"], first_action[0], state["grid"]):
-        if cursor_selecting_car(first_action[0], state):
-            key,pop = first_action[1],True
-            print("selects car")
-        else:
-            key,pop = " ", False  # deselects car
-            print("deselects car")
-    else:
-        if cursor_is_selected_on_to_something(state):
-            key, pop = " ", False
-        # have to move to  car
-        # returns either w,a,s or d
-        else:
-            key, pop = get_to_car(first_action[0], state, state["grid"]), False
-            print("going to car")
-
-    print(f"Sending action: ")
-    return key,pop
-
-
-def checkCrazy(action,grid):
-    mapa = Map(grid)
-    dom = Dominio(mapa)
-    dom.result(mapa,action)
-    
 """Example client."""
 
 async def agent_loop(server_address="localhost:8000", agent_name="student"):
@@ -91,22 +62,26 @@ async def agent_loop(server_address="localhost:8000", agent_name="student"):
                 state = json.loads(
                     await websocket.recv()
                 )  # receive game update, this must be called timely or your game will get out of sync with the server
-                
-                if not actions:
-                    print("New Level: Loading path")
+
+                if actions == []:
                     actions = search_path("breadth", state["grid"])
 
-                try:
-                    checkCrazy(actions[0], state["grid"])
-                except:
-                    print("Crazy driver: Path changing")
-                    actions = search_path("breadth", state["grid"])
-                key,pop = get_key(actions,state)
-                print(actions)
-                if pop:
-                    actions.pop(0)
+                first_action = actions[0]
+                if cursor_on_car(state["cursor"], first_action[0], state["grid"]):
+                    if cursor_selecting_car(first_action[0], state):
+                        key = first_action[1]
+                        actions.pop(0)
+                    else:
+                        key = " "  # deselects car
+                else:
+                    if cursor_is_selected_on_to_something(state):
+                        key = " "
+                    # have to move to  car
+                    # returns either w,a,s or d
+                    else:
+                        key = get_to_car(first_action[0], state, state["grid"])
+                print(f"Sending action: {key}")
 
-                print(f"|{key}|")
                 await websocket.send(
                     json.dumps({"cmd": "key", "key": key})
                 )  # send key command to server - you must implement this send in the AI agent

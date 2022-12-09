@@ -1,28 +1,48 @@
 from dominio import *
 from tree_search import *
-from commonMAIS import *
-# 01 ooooooooooooAAoooooooooooooooooooooo 5     
-# 02 ooooooooBoooAABooooooooooooooooooooo 21    
-# 03 ooBoooooBooCAABooCoooooooooooooooooo 62    
-# 04 oooooHoxCCoHAAoGoooFoGoooFDDxooooooo 302   
-# 05 FBBCCoFoIoooAAIoooGHDDxoGHoooooooooo 1385
-# 06 oBBCCoooFGHoAAFGHooooGooxoEEoooooooo 940
-# 07 oEoBBBoEoFGHAAoFGHooCCGIoooooIoooDDI 4543
-# 08 ooxCCCoHxooLoHJAALoIJEEEoIFFKooGGoKo 84
-# 09 oooGoooooGHIoAAGHIooFBBBooFCCoooxEEo 2727
-m = Map("35 BBooKoxDDoKooHAAKooHIJEEFFIJoLoGGGoL 28334")
+from commonMAIS import Coordinates
+# 01 ooooooooooooAAoooooooooooooooooooooo 5
+# 02 ooooooooooBoAAooBooooooooooooooooooo 21
+# 03 ooooCoooooCoAAooCoooooooooBBBooooooo 40
+# 04 EBBBooEooFooEAAFooooCCoooDDDoooooooo 1108
+# 05 BBBCCoooHIooAAHIooGDDooxGooooooooxoo 713
+# 06 EoBBECCCAAoFDDoF 34 
+# 07 ooooooooooooooDGooooooDGooooBCEHAAooBCEHooooooFIooooooFIooooooFI 3501 
+# 08 ooooooooooooooEHooooCDEHoooBCDFIAAoBCDFIooooooGJooooooGJoooooooJ 34992 
+# 09 oooooooooooooDGJoooooDGJoooBCEHKAAoBCEHKoooooFILoooooFILoooooooo 168920 
+# 10 oooooooooooooooFoooooooFoooBCDEGAAoBCDEGoooooooHoooooooHoooooooo 105350 
+# 11 ooooooooooooCFILooooCFILoooBDGJMAAoBDGJMooooEHKNooooEHKNoooooooo 208400
+
+m = Map("09 oooooooooooooDGJoooooDGJoooBCEHKAAoBCEHKoooooFILoooooFILoooooooo 168920")
 d = Dominio (m)
 p = SearchProblem(d)
-t = SearchTree(p, "depth")
+t = SearchTree(p, "breadth")
+st = time.time()
+
 result = t.search()
 
-for x in m.grid: 
-    print(x)
+
 print(result)
 
 
 
+et = time.time()
+elapsed_time = et - st
+print(elapsed_time)
 
+# EBBBoo
+# EooFoo
+# EAAFoo
+# ooCCoo
+# oDDDoo
+# oooooo
+# ---
+# 0  oBBBoo 5
+# 6  oooooo 11
+# 12 EAAFoo 17
+# 18 ECCFoo 23
+# 24 EooDDD 29
+# 30 oooooo 35
 
 '''
 NrSteps= 1                          #printa os separadores (estetico)

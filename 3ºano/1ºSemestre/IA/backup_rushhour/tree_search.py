@@ -35,19 +35,6 @@ class SearchDomain(ABC):
     def result(self, state, action):
         pass
 
-    # custo de uma accao num estado
-    # @abstractmethod                             # ex 8
-    # def cost(self, state, action):
-    #     from dominio import Dominio
-    #     return Dominio.cost(self, state, action)
-
-######################################################################
-    # custo estimado de chegar de um estado a outro
-    @abstractmethod
-    def heuristic(self, state ):
-        return Dominio.heuristic(self, state)
-######################################################################
-
     # test if the given "goal" is satisfied in "state"
     @abstractmethod
     def satisfies(self, state):
@@ -63,13 +50,10 @@ class SearchProblem: ### feito
         
 # Nos de uma arvore de pesquisa
 class SearchNode:
-    def __init__(self,state,parent, action = None, heuristic = 0): 
+    def __init__(self,state,parent, action = None): 
         self.state = state
         self.parent = parent
         self.action = action # se for root, a action que gerou este node é None else é a action do newnode
-######################################################################
-        self.heuristic = heuristic
-######################################################################
 
 
     def __str__(self):
@@ -104,13 +88,12 @@ class SearchTree:
         return list(reversed(actions))
 
 
-# vejam no searchNode
     # procurar a solucao
     def search(self):
-        estados_conhecidos = []
+        estados_conhecidos = set()
         while self.open_nodes != []:
             node = self.open_nodes.pop(0)
-            estados_conhecidos.append(node.state.__repr__())
+            estados_conhecidos.add(node.state.grid_string)
 
             if self.problem.goal_test(node.state): # se ja chegamos ao goal
                 self.solution = node
@@ -119,17 +102,19 @@ class SearchTree:
 
             lnewnodes = [] # se ainda nao chegamos ao goal
             for a in self.problem.domain.actions(node.state): # por cada açao possivel neste node
-                newstate = self.problem.domain.result(node.state,a) # ver o resultado de cada açao possivel
-
-                if newstate.__repr__() not in estados_conhecidos: #  -- se resultado not in path...
-                    newnode = SearchNode(newstate,node,a) 
+                newstate = self.problem.domain.result_two(node.state,a) # ver o resultado de cada açao possivel
+                if newstate not in estados_conhecidos: #  -- se resultado not in path...
+                    # print(newstate)
+                    newmap = Map(str(node.state.pieces) + " " + newstate + " " + str(node.state.movements))
+                    newnode = SearchNode(newmap,node,a) 
                     lnewnodes.append(newnode)
-                    estados_conhecidos.append(newstate.__repr__())
+                    estados_conhecidos.add(newstate)
 
             self.add_to_open(lnewnodes)
         return None
-
-    # juntar novos nos a lista de nos abertos de acordo com a estrategia
+   
+    #juntar novos nos a lista de nos abertos de acordo com a estrategia
+    
     def add_to_open(self,lnewnodes):
 
         if self.strategy == 'breadth':          #feito
