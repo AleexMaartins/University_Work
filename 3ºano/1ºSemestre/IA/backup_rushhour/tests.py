@@ -1,34 +1,37 @@
-from dominio import *
-from tree_search import *
-from commonMAIS import Coordinates
+from dominio import Dominio
+from tree_search import SearchProblem, SearchTree
+import time
+from commonMAIS import Map
 # 01 ooooooooooooAAoooooooooooooooooooooo 5
 # 02 ooooooooooBoAAooBooooooooooooooooooo 21
 # 03 ooooCoooooCoAAooCoooooooooBBBooooooo 40
 # 04 EBBBooEooFooEAAFooooCCoooDDDoooooooo 1108
 # 05 BBBCCoooHIooAAHIooGDDooxGooooooooxoo 713
-# 06 EoBBECCCAAoFDDoF 34 
-# 07 ooooooooooooooDGooooooDGooooBCEHAAooBCEHooooooFIooooooFIooooooFI 3501 
-# 08 ooooooooooooooEHooooCDEHoooBCDFIAAoBCDFIooooooGJooooooGJoooooooJ 34992 
-# 09 oooooooooooooDGJoooooDGJoooBCEHKAAoBCEHKoooooFILoooooFILoooooooo 168920 
-# 10 oooooooooooooooFoooooooFoooBCDEGAAoBCDEGoooooooHoooooooHoooooooo 105350 
+# 06 EoBBECCCAAoFDDoF 34
+# 07 ooooooooooooooDGooooooDGooooBCEHAAooBCEHooooooFIooooooFIooooooFI 3501
+# 08 ooooooooooooooEHooooCDEHoooBCDFIAAoBCDFIooooooGJooooooGJoooooooJ 34992
+# 09 oooooooooooooDGJoooooDGJoooBCEHKAAoBCEHKoooooFILoooooFILoooooooo 168920
+# 10 oooooooooooooooFoooooooFoooBCDEGAAoBCDEGoooooooHoooooooHoooooooo 105350
 # 11 ooooooooooooCFILooooCFILoooBDGJMAAoBDGJMooooEHKNooooEHKNoooooooo 208400
+with open('levels.txt', 'r') as f:
+    levels = f.read().splitlines()
 
-m = Map("09 oooooooooooooDGJoooooDGJoooBCEHKAAoBCEHKoooooFILoooooFILoooooooo 168920")
-d = Dominio (m)
-p = SearchProblem(d)
-t = SearchTree(p, "breadth")
-st = time.time()
+# run all levels and for each level print the solution and time, in the end, print total time
+total_time = 0
+for level in levels:
+    print(level)
+    m = Map(level)
+    d = Dominio(m)
+    p = SearchProblem(d)
+    t = SearchTree(p, strategy="depth")
+    start = time.time()
+    sol = t.search()
+    end = time.time()
+    total_time += end - start
+    print('Solution:', sol)
+    print('Time:', end - start)
+print('Total time:', total_time)
 
-result = t.search()
-
-
-print(result)
-
-
-
-et = time.time()
-elapsed_time = et - st
-print(elapsed_time)
 
 # EBBBoo
 # EooFoo
