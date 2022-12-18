@@ -92,7 +92,7 @@ print("\n-- ## Ex. 3 --------------------------------")
 t0 = time.process_time()
 t = MyTree(p,optimize=1)
 print('breadth',t.optimize,t.search2())
-print(t.non_terminals,t.terminals)  #1290 1730
+print(t.non_terminals,t.terminals)
 print(t.solution)
 print(t.all_nodes[t.open_nodes[0]])
 print("Time:",time.process_time()-t0)
@@ -117,36 +117,92 @@ print(t.all_nodes[t.open_nodes[0]])
 print("Time:",time.process_time()-t0)
 
 
-print("\n-- ## Ex. 5 --------------------------------")
+# print("\n-- ## Ex. 5 --------------------------------")
 
-t0 = time.process_time()
-t = MyTree(p_as_tuple,optimize=4)
-print('breadth',t.optimize,t.search2())
-print(t.non_terminals,t.terminals)
-print(t.solution)
-print(t.open_nodes==[])
-print("Time:",time.process_time()-t0)
+# t0 = time.process_time()
+# t = MyTree(p_as_tuple,optimize=4)
+# print('breadth',t.optimize,t.search2())
+# print(t.non_terminals,t.terminals)
+# print(t.solution)
+# print(t.open_nodes)
+# print("Time:",time.process_time()-t0)
 
 
 
 print("\n-- ## Ex. 6 --------------------------------")
 
 t0 = time.process_time()
-t = MyTree(p,'IBA*')
-print('IBA*',t.optimize,t.search2())
+t = MyTree(p,'A*')
+print('A*',t.optimize,t.search2())
 print(t.non_terminals,t.terminals)
 print(t.solution)
 node=t.all_nodes[t.open_nodes[0]]
-print(node.cost,node.heuristic,node.depth)
+print(node.state,node.parent,node.cost,node.heuristic,node.depth)
 print("Time:",time.process_time()-t0)
 print()
 
 t0 = time.process_time()
-t = MyTree(p_as_tuple,'IBA*',optimize=4)
-print('breadth',t.optimize,t.search2())
+t = MyTree(p_as_tuple,'A*',optimize=4)
+print('A*',t.optimize,t.search2())
 print(t.non_terminals,t.terminals)
 print(t.solution)
-print(t.open_nodes)
+print(t.open_nodes[0])
 print("Time:",time.process_time()-t0)
 
 
+# print("\n-- ## Ex. 7 --------------------------------")
+
+# t0 = time.process_time()
+# t = MyTree(p,'IBA*')
+# print('IBA*',t.optimize,t.search2(),t.keep)
+# print(t.non_terminals,t.terminals)
+# print(t.solution)
+# node=t.all_nodes[t.open_nodes[0]]
+# print(node.state,node.parent,node.cost,node.heuristic,node.depth)
+# print("Time:",time.process_time()-t0)
+# print()
+
+# t0 = time.process_time()
+# t = MyTree(p_as_tuple,'IBA*',optimize=4,keep=0.05)
+# print('IBA*',t.optimize,t.search2(),t.keep)
+# print(t.non_terminals,t.terminals)
+# print(t.solution)
+# print(t.open_nodes[0])
+# print("Time:",time.process_time()-t0)
+# print()
+
+# t0 = time.process_time()
+# t = MyTree(p_as_tuple,'IBA*',optimize=2,keep=0.15)
+# print('IBA*',t.optimize,t.search2(),t.keep)
+# print(t.non_terminals,t.terminals)
+# print(t.solution)
+# print(t.open_nodes[0])
+# print("Time:",time.process_time()-t0)
+# print()
+
+
+print("\n-- ## Ex. 8 --------------------------------")
+
+
+initial_state = [ Floor('a'), Floor('b'), Floor('d'), Holds('e'), On('c','d'), 
+                  Free('a'), Free('b'), Free('c') ] 
+
+initial_state += [ Floor('x'),On('y','x'),On('z','y'),On('w','z'), Free('w') ]
+
+#    _
+#   / \                      
+#  |  (e)                    |w|
+#  |                         |z|
+#  |                  |c|    |y|
+# _|___|a|____|b|_____|d|____|x|___
+# 
+
+bwdomain = MySTRIPS()
+
+plan = [ Stack.instanciate(['e','b']), Unstack.instanciate(['e','b']), Stack.instanciate(['e','c']), 
+         Pickup.instanciate(['a']), Stack.instanciate(['a','b']), Unstack.instanciate(['e','c']), 
+         Stack.instanciate(['e','w']), Unstack.instanciate(['c','d']), Stack.instanciate(['c','d']), 
+         Unstack.instanciate(['a','b']), Stack.instanciate(['a','e']), Pickup.instanciate(['b']), 
+         Stack.instanciate(['b','a']), Unstack.instanciate(['b','a']), Putdown.instanciate(['b']) ]
+
+print(bwdomain.simulate_plan(initial_state,plan))

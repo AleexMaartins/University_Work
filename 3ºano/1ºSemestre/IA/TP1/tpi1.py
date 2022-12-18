@@ -1,6 +1,9 @@
+#Autor : Alexandre Martins,103552
+#discussed with: Marco Almeida, Bruno Gomes, Tomas Rodrigues
 from tree_search import *
 from cidades import *
 from blocksworld import *
+
 
 
 def func_branching(connections,coordinates):
@@ -26,9 +29,11 @@ class MySTRIPS(STRIPS):
     def __init__(self,optimize=False):
         super().__init__(optimize)
 
-    def simulate_plan(self,state,plan):
-        #IMPLEMENT HERE
-        pass
+    def simulate_plan(self, state, plan):
+        for act in plan:
+            state = self.result(state, act)         
+            return state
+
 
  
 class MyNode(SearchNode):
@@ -63,17 +68,28 @@ class MyTree(SearchTree):
 
         #ADD HERE ANY CODE YOU NEED
     
+
+    
+
     def astar_add_to_open(self,lnewnodes):
-        #IMPLEMENT HERE
-        pass
+        if self.optimize == 0:
+            self.open_nodes.extend(lnewnodes)
+            self.open_nodes.sort(key=lambda x: self.all_nodes[x].heuristic + self.all_nodes[x].cost) 
+        else: 
+            self.open_nodes.extend(lnewnodes)
+            self.open_nodes.sort(key=lambda x: self.all_nodes[x][2] + self.all_nodes[x][2]) #resultado está errado porque nao fiz o 5
+        
+        
 
-
+    
     # remove a fraction of open (terminal) nodes
     # with lowest evaluation function
     # (used in Incrementally Bounded A*)
     def forget_worst_terminals(self):
         #IMPLEMENT HERE
         pass
+   
+
     def get_path(self, node):
         this_parent = node.parent if isinstance(node, MyNode) else node[1]
         this_state = node.state if isinstance(node, MyNode) else node[0]
@@ -99,17 +115,28 @@ class MyTree(SearchTree):
                     self.solution = node
                     self.terminals = len(self.open_nodes)+1
                     return self.get_path(node)
+            if self.optimize>=2:
+                if self.problem[0][4](node[0],self.problem[2]):
+                    self.solution = node
+                    self.terminals = len(self.open_nodes)+1
+                    return self.get_path(node)        
 
             lnewnodes = []
             self.non_terminals += 1
             este_state = node.state if self.optimize == 0 else node[0]
-            for a in self.problem.domain.actions(este_state):
-                newstate = self.problem.domain.result(este_state,a)
+            este_actions = self.problem.domain.actions(este_state) if self.optimize <2 else self.problem[0][0](este_state)
+            
+            for a in este_actions:
+                este_result = self.problem.domain.result(este_state,a) if self.optimize <2 else self.problem[0][1](este_state,a)
+                newstate = este_result
                 if newstate not in self.get_path(node):
                     if self.optimize == 0:
                         newnode = MyNode(newstate,nodeID, node.cost + self.problem.domain.cost(node.state, a), self.problem.domain.heuristic(newstate, self.problem.goal), node.depth + 1)
                     if self.optimize ==1: #state,parent,cost=0,heuristic=0,depth=0
                         newnode = (newstate,nodeID, node[2] + self.problem.domain.cost(node[0], a), self.problem.domain.heuristic(newstate, self.problem.goal), node[4] + 1) 
+                    if self.optimize >=2: #state,parent,cost=0,heuristic=0,depth=0
+                        newnode = (newstate,nodeID, node[2] + self.problem[0][2](node[0], a), self.problem[0][3](newstate, self.problem[2]), node[4] + 1) 
+                    
                     lnewnodes.append(len(self.all_nodes))
                     self.all_nodes.append(newnode)
             self.add_to_open(lnewnodes)

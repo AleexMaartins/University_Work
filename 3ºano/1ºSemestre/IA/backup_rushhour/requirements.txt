@@ -1,5 +1,0 @@
-asyncio
-pygame
-requests
-urllib3
-websockets
