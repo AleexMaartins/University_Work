@@ -66,3 +66,7 @@ public class Ex10 {
         
     }
 }
+
+// Escreva um programa que leia um conjunto de números reais do teclado, terminado por um 
+// valor igual ao primeiro que foi introduzido. No fim, indique o valor máximo, o valor mínimo, 
+// a média e o total de número lidos

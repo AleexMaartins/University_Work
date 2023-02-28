@@ -16,3 +16,8 @@ public class Ex9 {
         }
     }
 }
+
+// Escreva um programa que imprima uma contagem decrescente (até 0) a partir de um valor 
+// positivo N, introduzido pelo utilizador através do teclado. Escreva o output numa única 
+// linha, separando os números por vírgulas. Extra: introduza uma quebra de linha sempre que escreve 
+// um número múltiplo de 10.
