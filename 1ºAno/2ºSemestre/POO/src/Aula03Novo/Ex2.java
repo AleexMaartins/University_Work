@@ -17,31 +17,31 @@ public class Ex2 {
         }
         System.out.println("Montante final: " + total);
     }
-    
+
     public static double asktax() {
         System.out.print("Taxa entre 0 e 5: ");
         double tax = input.nextDouble();
-        while(tax < 0 || tax > 5){
+        while (tax < 0 || tax > 5) {
             System.out.println("Valor nao entre 0 e 5");
             tax = input.nextDouble();
         }
-    return tax;
+        return tax;
     }
-    
+
     public static int askvalue() {
         System.out.print("Montante multiplo de 1000: ");
         int montante = askForAnIntPos();
-        while(montante % 1000 != 0){
+        while (montante % 1000 != 0) {
             System.out.println("Valor nao multiplo de 1000");
             montante = askForAnIntPos();
         }
-    return montante;
+        return montante;
     }
 
-    private static int askForAnIntPos(){ 
+    private static int askForAnIntPos() {
         int nr = 0;
         boolean check = true;
-        while(check){
+        while (check) {
             try {
                 nr = input.nextInt();
                 check = false;
