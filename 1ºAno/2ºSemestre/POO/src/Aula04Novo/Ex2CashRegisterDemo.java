@@ -7,22 +7,20 @@ class Product {
     private String name;
     private double price;
     private int quantity;
-    private double total;
-
-
-    @Override
-    public String toString() {
-        return  name +  "\t"  + price + "\t"+"\t"  + quantity + "\t" +"\t" + total + "\n"  ;
-    }
-
+    
     public Product(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
-        this.total= getTotalValue();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %10s %18s %12s \n", name, price, quantity, Math.round(getTotalValue()* 100.0) / 100.0);
     }
 
     public double getTotalValue() {
+        
         return price * quantity;
     }
 
@@ -50,20 +48,28 @@ class CashRegister {
         listaProdutos.add(p);
     }
 
+
     @Override
     public String toString() {
-        // print header
-        // for each product in productlist
-        // print product.tostring
-        System.out.println("Product" + "\t" +"\t"  +"Price" + "\t" +"\t"  +"Quantity" + "\t"  +"Total" );
-        return listaProdutos + "" ;
+        StringBuilder result = new StringBuilder(
+                "Product" + "\t" + "\t" + "Price" + "\t" + "\t" + "Quantity" + "\t" + "Total\n");
+        for (Product p : listaProdutos) {
+            result.append(p.toString());
+        }
+        double sum = 0;
+        for(Product p : listaProdutos){
+            sum += p.getTotalValue();
+        }
+        result.append("\nTotal Value: " + sum);
+        
+        return result.toString();
     }
 }
 
 public class Ex2CashRegisterDemo {
 
     public static void main(String[] args) {
-        
+
         // Cria e adiciona 5 produtos
         CashRegister cr = new CashRegister();
         cr.addProduct(new Product("Book      ", 9.99, 3));
@@ -74,7 +80,6 @@ public class Ex2CashRegisterDemo {
 
         // TO DO: Listar o conteúdo e valor total
         System.out.println(cr);
-
     }
 
 }
