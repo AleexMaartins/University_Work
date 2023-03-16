@@ -1,92 +1,198 @@
 package Aula05Novo;
 
 import java.util.Scanner;
-public class Ex2 {
-    private int year;
-    private String firstWeekDayOfYear;
-    String eventos[][] = new String[Ex1DateYMD.yearDays(year)][2];
 
-    public Ex2(int year, String firstWeekDayOfYear) {
-        this.year = year;
-        this.firstWeekDayOfYear = firstWeekDayOfYear;
-    }
+public class Ex2 {
+    static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int day, month, year;
+        String addEvent, removeEvent;
+        printMenu();
+        int op = input.nextInt();
+        Ex2Calendar calendar = new Ex2Calendar(2023, "sunday");
 
+        do {
+            switch (op) {
+                case 1:
+                    System.out.println("Year: ");
+                    year = askForAYear();
+                    String firstWeekDay = askForAWeekDay();
+                    calendar = new Ex2Calendar(year, firstWeekDay);
+                    break;
+                case 2:
+                    System.out.println("Month: ");
+                    month = askForAMonth();
+                    calendar.printMonth(month);
+                    break;
+                case 3:
+                    calendar.printCalendar();
+                    break;
+                case 4:
+                    year = askForAYear();
+                    month = askForAMonth();
+                    day = askForAday(month, year);
+                    addEvent = askForEvent();
+                    Ex1DateYMD addDate = new Ex1DateYMD(day, month, year);
+                    calendar.addEvent(addDate, addEvent);
+
+                    break;
+                // case 5:
+                // year = askForAYear();
+                // month = askForAMonth();
+                // day = askForAday(month, year);
+                // Ex1DateYMD removeDate = new Ex1DateYMD(day, month, year);
+                // System.out.print("Event: ");
+                // removEvent = input.nextLine();
+
+                // calendar.addEvent(removeDate, removEvent);
+                // break;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+
+            printMenu();
+            op = input.nextInt();
+        } while (op != 0);
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getFirstWeekDayOfYear() {
-        return firstWeekDayOfYear;
-    }
-
-    public void setFirstWeekDayOfYear(String firstWeekDayOfYear) {
-        this.firstWeekDayOfYear = firstWeekDayOfYear;
-    }
-
-    public String firstWeekOfMonth(int month) { 
-        int daysFromFirstWeekDay = 0;
-        int firstWeekDay = 0;
-
-        for(int i=0; i<(month-1); i++){
-            daysFromFirstWeekDay += Ex1DateYMD.monthDays(i, year);  //soma de todos os dias até ao 1º do mês pedido
-        }
-        daysFromFirstWeekDay += 1;  //soma de 1 dia para o 1º do mês pedido
-        System.out.println(daysFromFirstWeekDay);
-        switch (firstWeekDayOfYear) {
-            case "Sunday":
-                firstWeekDay = 0;
-            case "Monday":
-                firstWeekDay = 1;
-            case "Tuesday":
-                firstWeekDay = 2;
-            case "Wednesday":
-                firstWeekDay = 3;
-            case "Thursday":
-                firstWeekDay = 4;
-            case "Friday":
-                firstWeekDay = 5;
-            case "Saturday":
-                firstWeekDay = 6;
-            default:
-                System.out.println("Invalid first week day of year.");
-        }
-        int firstWeekDayOfMonth = (firstWeekDay + daysFromFirstWeekDay) % 7;
-        String firstWeekDayOfMonthString = "";
-        switch (firstWeekDayOfMonth) {
-            case 0:
-                firstWeekDayOfMonthString = "Sunday";
-            case 1:
-                firstWeekDayOfMonthString = "Monday";
-            case 2:
-                firstWeekDayOfMonthString = "Tuesday";
-            case 3:
-                firstWeekDayOfMonthString = "Wednesday";
-            case 4:
-                firstWeekDayOfMonthString = "Thursday";
-            case 5:
-                firstWeekDayOfMonthString = "Friday";
-            case 6:
-                firstWeekDayOfMonthString = "Saturday";
-        }
-        return firstWeekDayOfMonthString;
-    }
-
-    public void addEvent(Ex1DateYMD date){      
-    
-    }
     public static void printMenu() {
         System.out.println("\n\nDate operations:");
         System.out.println("1 - create new calendar");
         System.out.println("2 - print calendar month");
         System.out.println("3 - print calendar");
+        System.out.println("4 - add event");
+        System.out.println("5 - remove event");
         System.out.println("0 - exit");
+    }
+
+    private static int askForAYear() {
+        int nr = 0;
+        boolean check = true;
+        while (check) {
+            try {
+                System.out.print("Input a year: ");
+                nr = input.nextInt();
+                if (nr <= 0) {
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    System.out.println("Value not positive!!");
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    continue;
+                }
+                check = false;
+
+            } catch (Exception e) {
+                System.out.println("____________________________");
+                System.out.println("");
+                System.out.println("Value not an integer!!");
+                System.out.println("____________________________");
+                System.out.println("");
+                input.nextLine();
+            }
+        }
+        return nr;
+    }
+
+    private static String askForAWeekDay() {
+        String weekDay = "";
+        String[] weekDays = { "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday" };
+        boolean check = true;
+        while (check) {
+            try {
+                System.out.print("Input a week day: ");
+                weekDay = input.next().toLowerCase();
+                for (String s : weekDays) {
+                    if (s.equals(weekDay)) {
+                        check = false;
+                    }
+                }
+                if (check) {
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    System.out.println("Value not a week day!!");
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    continue;
+                }
+                check = false;
+
+            } catch (Exception e) {
+                System.out.println("____________________________");
+                System.out.println("");
+                System.out.println("Value not a week day!!");
+                System.out.println("____________________________");
+                System.out.println("");
+                input.nextLine();
+            }
+        }
+        return weekDay;
+    }
+
+    private static int askForAMonth() {
+        int nr = 0;
+        boolean check = true;
+        while (check) {
+            try {
+                System.out.print("Input a month: ");
+                nr = input.nextInt();
+                if (nr <= 0 || nr > 12) {
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    System.out.println("Value not a month!!");
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    continue;
+                }
+                check = false;
+
+            } catch (Exception e) {
+                System.out.println("____________________________");
+                System.out.println("");
+                System.out.println("Value not an integer!!");
+                System.out.println("____________________________");
+                System.out.println("");
+                input.nextLine();
+            }
+        }
+        return nr;
+    }
+
+    public static int askForAday(int month, int year) {
+        int nr = 0;
+        boolean check = true;
+        while (check) {
+            try {
+                System.out.print("Input a day: ");
+                nr = input.nextInt();
+                if (nr <= 0 || nr > Ex1DateYMD.monthDays(month, year)) {
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    System.out.println("Value not a valid day of this month!!");
+                    System.out.println("____________________________");
+                    System.out.println("");
+                    continue;
+                }
+                check = false;
+
+            } catch (Exception e) {
+                System.out.println("____________________________");
+                System.out.println("");
+                System.out.println("Value not an integer!!");
+                System.out.println("____________________________");
+                System.out.println("");
+                input.nextLine();
+            }
+        }
+        return nr;
+    }
+
+    public static String askForEvent() {
+        System.out.print("Input an event: ");
+        String event = input.next();
+
+        return event;
     }
 }
