@@ -7,7 +7,6 @@ public class Ex2 {
 
     public static void main(String[] args) {
         int day, month, year;
-        String addEvent, removeEvent;
         printMenu();
         int op = input.nextInt();
         Ex2Calendar calendar = new Ex2Calendar(2023, "sunday");
@@ -32,21 +31,17 @@ public class Ex2 {
                     year = askForAYear();
                     month = askForAMonth();
                     day = askForAday(month, year);
-                    addEvent = askForEvent();
                     Ex1DateYMD addDate = new Ex1DateYMD(day, month, year);
-                    calendar.addEvent(addDate, addEvent);
+                    calendar.addEvent(addDate, askForEvent());
 
                     break;
-                // case 5:
-                // year = askForAYear();
-                // month = askForAMonth();
-                // day = askForAday(month, year);
-                // Ex1DateYMD removeDate = new Ex1DateYMD(day, month, year);
-                // System.out.print("Event: ");
-                // removEvent = input.nextLine();
-
-                // calendar.addEvent(removeDate, removEvent);
-                // break;
+                case 5:
+                year = askForAYear();
+                month = askForAMonth();
+                day = askForAday(month, year);
+                Ex1DateYMD removeDate = new Ex1DateYMD(day, month, year);
+                calendar.addEvent(removeDate, askForEvent());
+                break;
                 default:
                     System.out.println("Invalid option.");
                     break;
