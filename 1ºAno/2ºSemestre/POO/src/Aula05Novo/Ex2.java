@@ -45,6 +45,8 @@ public class Ex2 {
                 default:
                     System.out.println("Invalid option.");
                     break;
+                case 6:
+                
             }
 
             printMenu();

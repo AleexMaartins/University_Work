@@ -1,7 +1,6 @@
 package Aula05Novo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -132,9 +131,6 @@ public class Ex2Calendar {
         if (events.containsKey(date)) {
             events.get(date).remove(event);
         }
-        else{
-            System.out.println("No events on this date.");
-        }
     }
 
     public void printMonth(int month) {
@@ -144,9 +140,8 @@ public class Ex2Calendar {
         switch (firstWeekdayOfMonth) {
             case "sunday":
                 for (int i = 1; i <= daysInMonth; i++) {
-                    if (i == 1 || i == 8 || i == 15 || i == 22 || i == 29) {
-                        System.out.print("\n");
-                    }
+                    if(i == 8 || i == 15 || i == 22 || i == 29)
+                    System.out.print("\n");
                     boolean hasEvent = false;
                     for (Ex1DateYMD date : events.keySet()) {
                         if (date.getYear() == year && date.getMonth() == month && date.getDay() == i) {
@@ -164,9 +159,8 @@ public class Ex2Calendar {
             case "monday":
                 System.out.print("\t");
                 for (int i = 1; i <= daysInMonth; i++) {
-                    if (i == 1 || i == 7 || i == 14 || i == 21 || i == 28) {
-                        System.out.print("\n");
-                    }
+                    if(i == 7 || i == 14 || i == 21 || i == 28)
+                    System.out.print("\n");
                     boolean hasEvent = false;
                     for (Ex1DateYMD date : events.keySet()) {
                         if (date.getYear() == year && date.getMonth() == month && date.getDay() == i) {
@@ -184,9 +178,8 @@ public class Ex2Calendar {
             case "tuesday":
                 System.out.print("\t\t");
                 for (int i = 1; i <= daysInMonth; i++) {
-                    if (i == 1 || i == 6 || i == 13 || i == 20 || i == 27) {
-                        System.out.print("\n");
-                    }
+                    if(i == 6 || i == 13 || i == 20 || i == 27)
+                    System.out.print("\n");
                     boolean hasEvent = false;
                     for (Ex1DateYMD date : events.keySet()) {
                         if (date.getYear() == year && date.getMonth() == month && date.getDay() == i) {
@@ -204,9 +197,8 @@ public class Ex2Calendar {
             case "wednesday":
                 System.out.print("\t\t\t");
                 for (int i = 1; i <= daysInMonth; i++) {
-                    if (i == 1 || i == 5 || i == 12 || i == 19 || i == 26) {
-                        System.out.print("\n");
-                    }
+                    if(i == 5 || i == 12 || i == 19 || i == 26)
+                    System.out.print("\n");
                     boolean hasEvent = false;
                     for (Ex1DateYMD date : events.keySet()) {
                         if (date.getYear() == year && date.getMonth() == month && date.getDay() == i) {
@@ -224,9 +216,8 @@ public class Ex2Calendar {
             case "thursday":
                 System.out.print("\t\t\t\t");
                 for (int i = 1; i <= daysInMonth; i++) {
-                    if (i == 1 || i == 4 || i == 11 || i == 18 || i == 25) {
-                        System.out.print("\n");
-                    }
+                    if(i == 4 || i == 11 || i == 18 || i == 25)
+                    System.out.print("\n");
                     boolean hasEvent = false;
                     for (Ex1DateYMD date : events.keySet()) {
                         if (date.getYear() == year && date.getMonth() == month && date.getDay() == i) {
@@ -244,34 +235,38 @@ public class Ex2Calendar {
             case "friday":
                 System.out.print("\t\t\t\t\t");
                 for (int i = 1; i <= daysInMonth; i++) {
-                    if (i == 1 || i == 3 || i == 10 || i == 17 || i == 24 || i == 31)
-                        System.out.print("\n" + i + "\t");
+                    if(i == 3 || i == 10 || i == 17 || i == 24 || i == 31)
+                    System.out.print("\n");
+                    boolean hasEvent = false;
                     for (Ex1DateYMD date : events.keySet()) {
-                        if (date.getYear() == year && date.getMonth() == month) {
-                            int day = date.getDay();
-                            System.out.print(day + "*\t");
+                        if (date.getYear() == year && date.getMonth() == month && date.getDay() == i) {
+                            hasEvent = true;
+                            break;
                         }
-
-                        else {
-                            System.out.print(i + "\t");
-                        }
+                    }
+                    if (hasEvent) {
+                        System.out.print(i + "*\t");
+                    } else {
+                        System.out.print(i + "\t");
                     }
                 }
                 break;
             case "saturday":
-                System.out.print("\n" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t");
-                for (int i = 1; i <= daysInMonth; i++) {
-                    if (i == 2 || i == 9 || i == 16 || i == 23 || i == 30)
-                        System.out.print("\n" + i + "\t");
+            System.out.print("\t\t\t\t\t\t");
+            for (int i = 1; i <= daysInMonth; i++) {
+                    if(i == 2 || i == 9 || i == 16 || i == 23 || i == 30)
+                    System.out.print("\n");
+                    boolean hasEvent = false;
                     for (Ex1DateYMD date : events.keySet()) {
-                        if (date.getYear() == year && date.getMonth() == month) {
-                            int day = date.getDay();
-                            System.out.print(day + "*\t");
+                        if (date.getYear() == year && date.getMonth() == month && date.getDay() == i) {
+                            hasEvent = true;
+                            break;
                         }
-
-                        else {
-                            System.out.print(i + "\t");
-                        }
+                    }
+                    if (hasEvent) {
+                        System.out.print(i + "*\t");
+                    } else {
+                        System.out.print(i + "\t");
                     }
                 }
                 break;
@@ -279,14 +274,7 @@ public class Ex2Calendar {
                 System.out.println("Invalid first week day of month.");
                 break;
         }
-        // System.out.println();
-        // for (Ex1DateYMD date : events.keySet()) {
-        //     if (date.getYear() == year && date.getMonth() == month) {
-        //         int day = date.getDay();
-        //         System.out.print(day + "*\t");
-        //     }
-        // }
-        // System.out.println();
+        
     }
 
     public void printCalendar() {
