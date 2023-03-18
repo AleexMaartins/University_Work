@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex3",
+            "request": "launch",
+            "mainClass": "Aula05Novo.Ex3",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

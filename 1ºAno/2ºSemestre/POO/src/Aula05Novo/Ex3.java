@@ -1,87 +1,48 @@
 package Aula05Novo;
 
 public class Ex3 {
-    private Ex3Imoveis[] imoveis;
-    private int nImoveis;
-
-    public Ex3(int nImoveis){
-        this.imoveis = new Ex3Imoveis[nImoveis];
-        this.nImoveis = 0;
-    }
-
-    public void addImovel(Ex3Imoveis im){
-        if(nImoveis < imoveis.length){
-            imoveis[nImoveis] = im;
-            nImoveis++;
-        }
-    }
-
-    public void removeImovel(int number){
-        for(int i = 0; i < nImoveis; i++){
-            if(imoveis[i].getNumber() == number){
-                imoveis[i] = imoveis[nImoveis - 1];
-                nImoveis--;
-                break;
-            }
-        }
-    }
-
-    public void listImoveis(){
-        for(int i = 0; i < nImoveis; i++){
-            System.out.println(imoveis[i].getNumber() + " " + imoveis[i].getLocal() + " " + imoveis[i].getPrice() + " " + imoveis[i].getQuartos() + " " + imoveis[i].getDisponivel());
-        }
-    }
-
-    public boolean isOnList(int number){
-        for(int i = 0; i < nImoveis; i++){
-            if(imoveis[i].getNumber() == number){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public String existeImovel(int number){
-        if(!isOnList(number)){
-            return "Imonvel " + number + " existe.";
-        }else{
-            return "Imonvel " + number + " não existe.";
-        }
-    }
-
-
-    public String dispImovel(int number){
-        if(Ex3Imoveis.getDisponivel()!= true ){
-            return "Imonvel " + number + " está disponivel.";
-        }else{
-            return "Imonvel " + number + " não está disponível.";
-        }
-    }
-    
-}
     public static void main(String[] args) {
-        
-        
-        //criar os imoveis
-        Ex3Imoveis im1 = new Ex3Imoveis(2,"Glória",30000, true);
-        Ex3Imoveis im2 = new Ex3Imoveis(1,"Vera Cruz",25000, false);
-        Ex3Imoveis im3 = new Ex3Imoveis(3,"Santa Joana",32000, true);
-        Ex3Imoveis im4 = new Ex3Imoveis(2,"Aradas",24000, true);
-        Ex3Imoveis im5 = new Ex3Imoveis(2,"São Bernardo",20000, true);
-        
+        Ex3AgenciaLeilao agenciaLeilao = new Ex3AgenciaLeilao();
 
-        //criar o array
-        // Imoveis[] imoveis = new Imoveis[5];
-        // imoveis[0] = im1;
-        // imoveis[1] = im2;
-        // imoveis[2] = im3;
-        // imoveis[3] = im4;
-        // imoveis[4] = im5;
+        // Create some imoveis and add them to the agenciaLeilao
+        Ex3Imovel imovel1 = new Ex3Imovel(3, "Lisboa", 200000, true, null, null);
+        agenciaLeilao.cadastrarImovel(imovel1);
 
+        Ex3Imovel imovel2 = new Ex3Imovel(2, "Porto", 150000, false, new Ex3Date(2022, 4, 1), new Ex3Date(2022, 4, 30));
+        agenciaLeilao.cadastrarImovel(imovel2);
 
-        //imprimir os imoveis
-          
+        Ex3Imovel imovel3 = new Ex3Imovel(4, "Coimbra", 300000, true, new Ex3Date(2022, 3, 1), new Ex3Date(2022, 3, 31));
+        agenciaLeilao.cadastrarImovel(imovel3);
 
-        
+        // Test buscarPorLocalidade method
+        System.out.println("Imoveis em Lisboa:");
+        for (Ex3Imovel imovel : agenciaLeilao.buscarPorLocalidade("Lisboa")) {
+            System.out.println(imovel.toString());
         }
+
+        // Test buscarPorPreco method
+        System.out.println("Imoveis com preco ate 250000:");
+        for (Ex3Imovel imovel : agenciaLeilao.buscarPorPreco(250000)) {
+            System.out.println(imovel.toString());
+        }
+
+        // Test buscarPorDisponibilidade method
+        System.out.println("Imoveis disponiveis:");
+        for (Ex3Imovel imovel : agenciaLeilao.buscarPorDisponibilidade(true)) {
+            System.out.println(imovel.toString());
+        }
+
+        // Test buscarPorDataLeilao method
+        System.out.println("Imoveis com leilao em abril 2022:");
+        for (Ex3Imovel imovel : agenciaLeilao.buscarPorDataLeilao(new Ex3Date(1, 4, 2022), new Ex3Date(30, 4, 2022))) {
+            System.out.println(imovel.toString());
+        }
+
+        // Test removerImovel method
+        agenciaLeilao.removerImovel(imovel2);
+        System.out.println("Imoveis depois de remover o imovel2:");
+        for (Ex3Imovel imovel : agenciaLeilao.getImoveis()) {
+            System.out.println(imovel.toString());
+        }
+    }
 }
