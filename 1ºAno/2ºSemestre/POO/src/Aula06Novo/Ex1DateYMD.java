@@ -1,12 +1,12 @@
-package Aula05Novo;
+package Aula06Novo;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
-
+import java.util.Scanner;
 public class Ex1DateYMD {
 
     private int day, month, year;
-
+    static Scanner input = new Scanner(System.in);
     public Ex1DateYMD(int day, int month, int year) {
         if (valid(day, month, year)) {
             this.day = day;
@@ -105,12 +105,29 @@ public class Ex1DateYMD {
     public static boolean leapYear(int year) {
         return ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)));
     }
+    public static Ex1DateYMD askData() {
+        int day,month,year;
+        do{
+        System.out.println("Insert a valid date:");
+        System.out.print("Day: \n");
+        day = input.nextInt();
 
+        System.out.print("Month: \n");
+        month = input.nextInt();
+
+        System.out.print("Year: \n");
+        year = input.nextInt();
+
+        }while(!Ex1DateYMD.valid(day, month, year));
+        Ex1DateYMD data = new Ex1DateYMD(day,month,year); 
+        return data;
+    }
     @Override
     public String toString() {
         return String.format("%04d-%02d-%02d", year, month, day);
     }
 
+    
     public int getDay() {
         return day;
     }
@@ -133,9 +150,5 @@ public class Ex1DateYMD {
 
     public void setYear(int year) {
         this.year = year;
-    }
-
-    public static Ex1DateYMD askDate() {
-        return null;
     }
 }

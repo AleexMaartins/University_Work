@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex2Contacto",
+            "request": "launch",
+            "mainClass": "Aula06Novo.Ex2Contacto",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
+            "name": "Ex1Test",
+            "request": "launch",
+            "mainClass": "Aula06Novo.Ex1Test",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
+            "name": "Ex1Pessoa",
+            "request": "launch",
+            "mainClass": "Aula06Novo.Ex1Pessoa",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
             "name": "Ex3",
             "request": "launch",
             "mainClass": "Aula05Novo.Ex3",
