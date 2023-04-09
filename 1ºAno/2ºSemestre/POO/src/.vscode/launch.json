@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ex1",
+            "request": "launch",
+            "mainClass": "Aula08Novo.Ex1",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
+            "name": "LibraryMain",
+            "request": "launch",
+            "mainClass": "LibraryMain",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
             "name": "Ex2Contacto",
             "request": "launch",
             "mainClass": "Aula06Novo.Ex2Contacto",
