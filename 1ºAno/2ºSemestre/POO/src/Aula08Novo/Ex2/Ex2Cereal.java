@@ -1,9 +1,9 @@
-package Aula082;
+package Ex2;
 
-public class Cereal extends ComidaVegetariano {
+public class Ex2Cereal extends Ex2ComidaVegetariano {
     private String nome;
 
-    public Cereal(String nome, double proteinas, double calorias, double peso) {
+    public Ex2Cereal(String nome, double proteinas, double calorias, double peso) {
         super(proteinas, calorias, peso);
         this.nome = nome;
     }
@@ -24,7 +24,7 @@ public class Cereal extends ComidaVegetariano {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Cereal other = (Cereal) obj;
+        Ex2Cereal other = (Ex2Cereal) obj;
         if (nome == null) {
             if (other.nome != null)
                 return false;

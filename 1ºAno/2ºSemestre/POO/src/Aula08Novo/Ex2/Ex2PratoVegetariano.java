@@ -1,15 +1,15 @@
-package Aula082;
+package Ex2;
 
 
-public class PratoVegetariano extends Prato {
+public class Ex2PratoVegetariano extends Ex2Prato {
 
-    public PratoVegetariano(String nome) {
+    public Ex2PratoVegetariano(String nome) {
         super(nome);
     }
 
     @Override
-    public boolean addIngrediente(Comida a) {
-        if (a instanceof ComidaVegetariano) {
+    public boolean addIngrediente(Ex2Comida a) {
+        if (a instanceof Ex2ComidaVegetariano) {
             this.getComposicao().add(a);
             return true;
         }

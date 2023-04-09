@@ -1,30 +1,30 @@
-package Aula082;
+package Ex2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Prato implements Comparable<Prato> {
+public class Ex2Prato implements Comparable<Ex2Prato> {
     private String nome;
-    private List<Comida> composicao;
+    private List<Ex2Comida> composicao;
 
-    public Prato(String nome) {
+    public Ex2Prato(String nome) {
         this.nome = nome;
         composicao = new ArrayList<>();
     }
 
-    public boolean addIngrediente(Comida a) {
+    public boolean addIngrediente(Ex2Comida a) {
         composicao.add(a);
         return true;
     }
 
     @Override
-    public int compareTo(Prato p) {
+    public int compareTo(Ex2Prato p) {
         double caloriasDeste = 0;
-        for (Comida alimento : composicao) {
+        for (Ex2Comida alimento : composicao) {
             caloriasDeste += alimento.getCalorias();
         }
         double caloriasDoutro = 0;
-        for (Comida alimento : p.getComposicao()) {
+        for (Ex2Comida alimento : p.getComposicao()) {
             caloriasDoutro += alimento.getCalorias();
         }
 
@@ -53,7 +53,7 @@ public class Prato implements Comparable<Prato> {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Prato other = (Prato) obj;
+        Ex2Prato other = (Ex2Prato) obj;
         if (composicao == null) {
             if (other.composicao != null)
                 return false;
@@ -80,11 +80,11 @@ public class Prato implements Comparable<Prato> {
         this.nome = nome;
     }
 
-    public List<Comida> getComposicao() {
+    public List<Ex2Comida> getComposicao() {
         return composicao;
     }
 
-    public void setComposicao(List<Comida> composicao) {
+    public void setComposicao(List<Ex2Comida> composicao) {
         this.composicao = composicao;
     }
 

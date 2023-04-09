@@ -1,18 +1,18 @@
-package Aula082;
+package Ex2;
 
 
-public class PratoDieta extends Prato {
+public class Ex2PratoDieta extends Ex2Prato {
     private double maxCalorias;
 
-    public PratoDieta(String nome, double maxCalorias) {
+    public Ex2PratoDieta(String nome, double maxCalorias) {
         super(nome);
         this.maxCalorias = maxCalorias;
     }
 
     @Override
-    public boolean addIngrediente(Comida a){
+    public boolean addIngrediente(Ex2Comida a){
         double totalCalorias = 0;
-        for (Comida al : this.getComposicao()) {
+        for (Ex2Comida al : this.getComposicao()) {
             totalCalorias += al.getCalorias();
         }
         if(maxCalorias >= totalCalorias + a.getCalorias()){
@@ -48,7 +48,7 @@ public class PratoDieta extends Prato {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        PratoDieta other = (PratoDieta) obj;
+        Ex2PratoDieta other = (Ex2PratoDieta) obj;
         if (Double.doubleToLongBits(maxCalorias) != Double.doubleToLongBits(other.maxCalorias))
             return false;
         return true;
@@ -57,7 +57,7 @@ public class PratoDieta extends Prato {
     @Override
     public String toString() {
         double sum = 0;
-        for (Comida alimento : this.getComposicao()) {
+        for (Ex2Comida alimento : this.getComposicao()) {
             sum += alimento.getCalorias();
         }
         return super.toString() + String.format(" - Dieta (%4.2f Calorias)",sum);

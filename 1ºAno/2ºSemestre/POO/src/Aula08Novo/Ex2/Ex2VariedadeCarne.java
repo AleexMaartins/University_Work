@@ -1,6 +1,6 @@
-package Aula082;
+package Ex2;
 
-public enum VariedadeCarne {
+public enum Ex2VariedadeCarne {
     VACA,
     PORCO,
     PERU,

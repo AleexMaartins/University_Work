@@ -1,9 +1,9 @@
-package Aula082;
+package Ex2;
 
-public class Peixe extends Comida {
-    private TipoPeixe tipo;
+public class Ex2Peixe extends Ex2Comida {
+    private Ex2TipoPeixe tipo;
 
-    public Peixe(TipoPeixe tipo, double proteinas, double calorias, double peso) {
+    public Ex2Peixe(Ex2TipoPeixe tipo, double proteinas, double calorias, double peso) {
         super(proteinas, calorias, peso);
         this.tipo = tipo;
     }
@@ -29,17 +29,17 @@ public class Peixe extends Comida {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Peixe other = (Peixe) obj;
+        Ex2Peixe other = (Ex2Peixe) obj;
         if (tipo != other.tipo)
             return false;
         return true;
     }
 
-    public TipoPeixe getTipo() {
+    public Ex2TipoPeixe getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoPeixe tipo) {
+    public void setTipo(Ex2TipoPeixe tipo) {
         this.tipo = tipo;
     }
 

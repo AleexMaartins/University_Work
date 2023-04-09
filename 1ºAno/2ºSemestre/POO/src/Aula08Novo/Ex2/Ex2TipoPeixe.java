@@ -1,6 +1,6 @@
-package Aula082;
+package Ex2;
 
-public enum TipoPeixe {
+public enum Ex2TipoPeixe {
     CONGELADO,
     FRESCO
 }

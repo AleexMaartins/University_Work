@@ -1,6 +1,6 @@
-package Aula082;
+package Ex2;
 
-public enum DiaSemana {
+public enum Ex2DiaSemana {
     SEGUNDA,
     TERCA,
     QUARTA,
@@ -9,7 +9,7 @@ public enum DiaSemana {
     SABADO,
     DOMINGO;
 
-    public static DiaSemana getEnum(int dia){
-        return DiaSemana.values()[dia];
+    public static Ex2DiaSemana getEnum(int dia){
+        return Ex2DiaSemana.values()[dia];
     }
 }

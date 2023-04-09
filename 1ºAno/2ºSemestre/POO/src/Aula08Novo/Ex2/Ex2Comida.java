@@ -1,11 +1,11 @@
-package Aula082;
+package Ex2;
 
-public abstract class Comida {
+public abstract class Ex2Comida {
     private double proteinas;
     private double calorias;
     private double peso;
 
-    public Comida(double proteinas, double calorias, double peso) {
+    public Ex2Comida(double proteinas, double calorias, double peso) {
         this.proteinas = proteinas;
         this.calorias = calorias;
         this.peso = peso;
@@ -38,7 +38,7 @@ public abstract class Comida {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Comida other = (Comida) obj;
+        Ex2Comida other = (Ex2Comida) obj;
         if (Double.doubleToLongBits(calorias) != Double.doubleToLongBits(other.calorias))
             return false;
         if (Double.doubleToLongBits(peso) != Double.doubleToLongBits(other.peso))

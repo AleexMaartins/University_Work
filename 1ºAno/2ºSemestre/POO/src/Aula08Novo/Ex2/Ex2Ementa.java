@@ -1,20 +1,20 @@
-package Aula082;
+package Ex2;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ementa {
+public class Ex2Ementa {
     private String nome;
     private String local;
-    private List<Prato> pratos;
+    private List<Ex2Prato> pratos;
 
-    public Ementa(String nome, String local) {
+    public Ex2Ementa(String nome, String local) {
         this.nome = nome;
         this.local = local;
         this.pratos = new ArrayList<>();
     }
 
-    public void addPrato(Prato p, DiaSemana d) {
+    public void addPrato(Ex2Prato p, Ex2DiaSemana d) {
         pratos.add(p);
     }
 
@@ -36,7 +36,7 @@ public class Ementa {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Ementa other = (Ementa) obj;
+        Ex2Ementa other = (Ex2Ementa) obj;
         if (local == null) {
             if (other.local != null)
                 return false;
@@ -59,8 +59,8 @@ public class Ementa {
     public String toString() {
         int i = 0;
         StringBuilder sb = new StringBuilder();
-        for (Prato p : pratos) {
-            sb.append(p + ", dia " + DiaSemana.getEnum(i) + "\n");
+        for (Ex2Prato p : pratos) {
+            sb.append(p + ", dia " + Ex2DiaSemana.getEnum(i) + "\n");
             i++;
         }
         return sb.toString();

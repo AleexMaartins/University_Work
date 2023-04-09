@@ -1,9 +1,9 @@
-package Aula082;
+package Ex2;
 
-public class Carne extends Comida {
-    private VariedadeCarne variedade;
+public class Ex2Carne extends Ex2Comida {
+    private Ex2VariedadeCarne variedade;
 
-    public Carne(VariedadeCarne variedade,double proteinas, double calorias, double peso) {
+    public Ex2Carne(Ex2VariedadeCarne variedade,double proteinas, double calorias, double peso) {
         super(proteinas, calorias, peso);
         this.variedade = variedade;
     }
@@ -29,17 +29,17 @@ public class Carne extends Comida {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Carne other = (Carne) obj;
+        Ex2Carne other = (Ex2Carne) obj;
         if (variedade != other.variedade)
             return false;
         return true;
     }
 
-    public VariedadeCarne getVariedade() {
+    public Ex2VariedadeCarne getVariedade() {
         return variedade;
     }
 
-    public void setVariedade(VariedadeCarne variedade) {
+    public void setVariedade(Ex2VariedadeCarne variedade) {
         this.variedade = variedade;
     }
 

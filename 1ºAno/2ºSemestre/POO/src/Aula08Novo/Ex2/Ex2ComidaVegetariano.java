@@ -1,8 +1,8 @@
-package Aula082;
+package Ex2;
 
-public abstract class ComidaVegetariano extends Comida {
+public abstract class Ex2ComidaVegetariano extends Ex2Comida {
 
-    public ComidaVegetariano(double proteinas, double calorias, double peso) {
+    public Ex2ComidaVegetariano(double proteinas, double calorias, double peso) {
         super(proteinas, calorias, peso);
     }
 
