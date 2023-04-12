@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "testes",
+            "request": "launch",
+            "mainClass": "testes.testes",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
+            "name": "Ex3ShoppingCartTester",
+            "request": "launch",
+            "mainClass": "Ex3.Ex3ShoppingCartTester",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
             "name": "Ex2",
             "request": "launch",
             "mainClass": "Ex2.Ex2",
