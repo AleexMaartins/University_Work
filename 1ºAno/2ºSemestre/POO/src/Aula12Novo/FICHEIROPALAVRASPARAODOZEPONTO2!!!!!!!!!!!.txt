@@ -1,0 +1,156 @@
+a:
+aenean, 1;
+a, 3;
+ac, 3;
+at, 2;
+ante, 1;
+aliquet, 2;
+amet, 7;
+adipiscing, 2;
+aliquam, 2;
+augue, 3;
+arcu, 1;
+
+b:
+bibendum, 2;
+
+c:
+consequat, 3;
+cursus, 1;
+commodo, 1;
+curabitur, 3;
+condimentum, 1;
+cubilia, 1;
+curae, 1;
+consectetur, 2;
+
+d:
+dolor, 2;
+donec, 2;
+duis, 1;
+dui, 2;
+dignissim, 2;
+dapibus, 1;
+diam, 1;
+
+e:
+eu, 4;
+euismod, 1;
+enim, 2;
+efficitur, 1;
+est, 2;
+egestas, 1;
+elit, 4;
+eget, 4;
+eros, 1;
+erat, 3;
+et, 1;
+
+f:
+facilisis, 2;
+fusce, 1;
+fringilla, 2;
+felis, 1;
+feugiat, 1;
+faucibus, 1;
+
+g:
+gravida, 2;
+
+h:
+hendrerit, 2;
+
+i:
+in, 4;
+ipsum, 4;
+id, 2;
+integer, 1;
+
+j:
+justo, 2;
+
+l:
+lacinia, 3;
+lorem, 3;
+lectus, 2;
+luctus, 3;
+ligula, 4;
+laoreet, 5;
+
+m:
+maecenas, 1;
+mauris, 3;
+metus, 1;
+malesuada, 1;
+magna, 3;
+molestie, 1;
+mi, 1;
+maximus, 1;
+
+n:
+nisi, 1;
+nibh, 1;
+nisl, 2;
+neque, 1;
+nam, 3;
+non, 4;
+nec, 2;
+nulla, 1;
+nunc, 6;
+
+o:
+ornare, 2;
+orci, 3;
+
+p:
+pharetra, 2;
+placerat, 2;
+primis, 1;
+posuere, 3;
+purus, 2;
+praesent, 1;
+porta, 1;
+porttitor, 1;
+phasellus, 1;
+
+q:
+quisque, 1;
+
+r:
+rhoncus, 2;
+rutrum, 2;
+risus, 1;
+
+s:
+sed, 4;
+suspendisse, 1;
+suscipit, 1;
+sapien, 3;
+sem, 2;
+semper, 1;
+sollicitudin, 1;
+scelerisque, 1;
+sagittis, 1;
+sit, 7;
+
+t:
+turpis, 3;
+tempor, 2;
+tortor, 1;
+tristique, 1;
+tempus, 1;
+tincidunt, 4;
+
+u:
+urna, 2;
+ultrices, 2;
+ut, 2;
+
+v:
+volutpat, 2;
+venenatis, 1;
+vestibulum, 4;
+vivamus, 1;
+vitae, 1;
+vel, 2;
+
