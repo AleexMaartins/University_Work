@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Ex1",
             "request": "launch",
+            "mainClass": "Aula10Novo.Ex1",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
+            "name": "Ex1",
+            "request": "launch",
             "mainClass": "Ex1",
             "projectName": "src_78227a9e"
         },

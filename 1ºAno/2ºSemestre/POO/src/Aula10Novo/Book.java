@@ -1,0 +1,76 @@
+package Aula10Novo;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Book {
+    private String title;
+    private String author;
+    private int year;
+
+    public Book(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+
+    private static List<Book> books = new ArrayList<>();
+    static Map<String, Book> booksMap = new HashMap<>();
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setBook() {
+        books.add(this);
+        booksMap.put(this.title, this);
+
+    }
+
+    public static List<Book> getBooks() {
+        return books;
+    }
+
+    public Map<String, Book> getBooksMap() {
+        return booksMap;
+    }
+
+    public void setBooksMap(Map<String, Book> booksMap) {
+        this.booksMap = booksMap;
+    }
+
+    public static void setBooks(List<Book> books) {
+        Book.books = books;
+    }
+
+    public static boolean checkMapForTit(String title) {
+        return booksMap.containsKey(title);
+    }
+
+    @Override
+    public String toString() {
+        return "[" + title + "," + author + "," + year + "]";
+    }
+}
