@@ -48,7 +48,10 @@ public class Book {
         booksMap.put(this.title, this);
 
     }
-
+    public void removeBook() {
+        books.remove(this);
+        booksMap.remove(this.title, this);
+    }
     public static List<Book> getBooks() {
         return books;
     }
@@ -67,6 +70,9 @@ public class Book {
 
     public static boolean checkMapForTit(String title) {
         return booksMap.containsKey(title);
+    }
+    public Book getBook(String title) {
+        return booksMap.search(title, this);
     }
 
     @Override

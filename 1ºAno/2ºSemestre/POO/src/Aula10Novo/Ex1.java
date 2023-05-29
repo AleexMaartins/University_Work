@@ -43,6 +43,7 @@ public class Ex1 {
                         aut = input.next();
                         ano = askForAYear();
 
+                        book.removeBook(tit); 
                         book = new Book(tit, aut, ano);
                         book.setBook();
                     }

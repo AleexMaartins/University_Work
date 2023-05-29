@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PackageTester",
+            "request": "launch",
+            "mainClass": "PackageTester",
+            "projectName": "src_78227a9e"
+        },
+        {
+            "type": "java",
             "name": "Ex1",
             "request": "launch",
             "mainClass": "Aula10Novo.Ex1",
