@@ -8,7 +8,7 @@ main:   li $t0, 5      # bin = 2
    
 	#sll	$t2,$t0,1 	#muda os valores todos 
 	#sll	$t3,$t0,4	#muda 1 casa para esquerda
-	#srl	$t4,$t0,4	#muda 1 casa para direita usando 0
-	#sra	$t5,$t0,4	#muda 1 casa para direita usando 1
-	#sra	$t6,$t0,16	#muda 4 casa para direita usando 1
+	#srl	$t4,$t0,4	#muda 1 casa para direita usando 0		quando unsigned
+	#sra	$t5,$t0,4	#muda 1 casa para direita consevando o sinal 	quando signed
+	#sra	$t6,$t0,16	#muda 4 casa para direita consevando o sinal 	quando signed
 	jr	$ra
