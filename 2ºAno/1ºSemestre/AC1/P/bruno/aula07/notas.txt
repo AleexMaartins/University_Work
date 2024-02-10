@@ -1,0 +1,5 @@
+as sub rotinas não podem alterar os registos $s0 a $s7
+
+registos $t0 a $t9, $v0 a $v1 e $a0 a $a3 podem ser livremente utilizados pelas sub-rotinas
+
+funçao intermedia temos de guardar $ra

@@ -1,0 +1,3 @@
+	.data
+	.align 3
+uvw:	.space 40

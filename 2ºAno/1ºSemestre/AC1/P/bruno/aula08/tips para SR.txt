@@ -1,0 +1,19 @@
+SR intermédia
+
+addiu $sp, $sp, -qtd
+sw    $ra, 0($sp)
+sw     x,  4($sp)
+sw     y,  8($sp)
+
+lw     y, 8($sp)
+lw     x, 4($sp)
+lw    $ra, 0($sp)
+addiu $sp, $sp, qtd
+
+
+
+SR terminadora
+
+registos temporários
+
+$a0...a3, $v0, $v1, $t0...$t9
