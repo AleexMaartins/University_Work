@@ -24,12 +24,12 @@ class Photo(BaseModel): # there are many Photos, 1 Album and 1 or many Photograp
 class Album(BaseModel): # there is 1 Album, 1 God, 1 or many Photographers(can become Supervisors) and 1 or many Participants(can become Album Owners) 
     id: str
     title: str
-    god : str #str instead of User because idk how to connect it in supabase to User   # User who creates the Album (only 1 God per album)
-    owner: List[str] = []          # can be given by God to 1 or more Participants
-    supervisor: List[str] = []     # can be given by God to 1 or more Photographers
-    photographer: List[str] = []   # can be given by God/Supervisor to a new User
-    participant: List[str] = []    # can be given by God/Supervisor to a new User
-    photos: List[str] = []        # can be added by God/Supervisor/Photographer
+    god : User                      # User who creates the Album (only 1 God per album)
+    owner: List[User] = []          # can be given by God to 1 or more Participants
+    supervisor: List[User] = []     # can be given by God to 1 or more Photographers
+    photographer: List[User] = []   # can be given by God/Supervisor to a new User
+    participant: List[User] = []    # can be given by God/Supervisor to a new User
+    photos: List[Photo] = []        # can be added by God/Supervisor/Photographer
     public : bool = False           # if True, then all Users can see the Albums (including Unregistered Users)
     
     
