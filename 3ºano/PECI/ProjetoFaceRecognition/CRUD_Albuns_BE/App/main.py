@@ -111,4 +111,9 @@ async def read_albums():
 async def delete_album(albumId: str):
     response = supabase.table("Albums").delete().eq("id", albumId).execute()
     return "Album deleted"
+
+@app.put("/albums/update/{albumId}")
+async def update_album(albumId: str, newTitle: str):
+    response = supabase.table("Albums").update({"title": newTitle}).eq("id", albumId).execute()
+    return "Album updated, new title is " + newTitle + "."
 #--------------------------------------------------------------------------------------------
