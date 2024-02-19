@@ -96,10 +96,10 @@ from models import Album
 app = FastAPI()
 
 
-@app.post("/albums/create")
-async def create_album(album: Album):
-    response = supabase.table("Albums").insert({"god": "testgod1", "title":"testtitle1"}).execute() # insert the album with id "testid1"
-    return response
+@app.post("/albums/create/{godID},{albumTitle}")
+async def create_album(godID: str, albumTitle: str):
+    response = supabase.table("Albums").insert({"god": godID, "title":albumTitle}).execute() # insert the album with id "testid1"
+    return "Album created"
 
 @app.get("/albums/read")
 async def read_albums():
@@ -107,7 +107,8 @@ async def read_albums():
     print("\n", data)
     return data
 
-@app.put("/albums/delete")
-async def delete_album():
-    response = supabase.table("Albums").delete().eq("id", "testid1").execute()
+@app.put("/albums/delete/{albumId}")
+async def delete_album(albumId: str):
+    response = supabase.table("Albums").delete().eq("id", albumId).execute()
+    return "Album deleted"
 #--------------------------------------------------------------------------------------------
