@@ -1,87 +1,9 @@
+from models import *
 from dotenv import load_dotenv
-from models import Album
 from fastapi import FastAPI
 from supabase import create_client
-import os
-from fastapi import FastAPI, UploadFile, File, HTTPException
-import boto3
-from io import BytesIO
-
+from datetime import datetime
 app = FastAPI()
-
-# S3 configuration
-s3_bucket_name = 'photosbucketfacefindr'
-s3_client = boto3.client('s3', region_name='eu-west-3', aws_access_key_id='AKIA4MTWMRVFB6SWUGUZ',
-                         aws_secret_access_key='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')
-
-# endpoint to upload a photo to S3
-
-
-@app.post("/photos/")
-async def upload_photo(file: UploadFile = File(...)):
-    try:
-        # upload file to S3
-        file_bytes = await file.read()
-        s3_client.put_object(Bucket=s3_bucket_name,
-                             Key=file.filename, Body=file_bytes)
-
-        return {"message": "Photo uploaded successfully"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-# endpoint to read all photos from S3
-
-
-@app.get("/photos/")
-async def read_all_photos():
-    try:
-        response = s3_client.list_objects(Bucket=s3_bucket_name)
-        photos = [obj['Key'] for obj in response.get('Contents', [])]
-
-        return photos
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-# endpoint to read a specific photo from S3
-
-
-@app.get("/photos/{photo_id}")
-async def read_photo(photo_id: str):
-    try:
-        response = s3_client.get_object(Bucket=s3_bucket_name, Key=photo_id)
-        photo_bytes = response['Body'].read()
-
-        return photo_bytes
-    except Exception as e:
-        raise HTTPException(status_code=404, detail="Photo not found")
-
-# endpoint to update a photo file in S3
-
-
-@app.put("/photos/{photo_id}")
-async def update_photo(photo_id: str, file: UploadFile = File(...)):
-    try:
-        # upload file to S3
-        file_bytes = await file.read()
-        s3_client.put_object(Bucket=s3_bucket_name,
-                             Key=photo_id, Body=file_bytes)
-
-        return {"message": "Photo updated successfully"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-# endpoint to delete a photo from S3
-
-
-@app.delete("/photos/{photo_id}")
-async def delete_photo(photo_id: str):
-    try:
-        s3_client.delete_object(Bucket=s3_bucket_name, Key=photo_id)
-
-        return {"message": "Photo deleted successfully"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
 
 # Codigo do Alex ----------------------------------------------------------------------------
 from fastapi import Form
@@ -92,106 +14,62 @@ def read_root():
 
 load_dotenv()
 
-
 # need to put this url and key in the .env file
 url = "https://axnzfqkjqdfblkpdbapt.supabase.co"
 key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF4bnpmcWtqcWRmYmxrcGRiYXB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgyMjE0ODksImV4cCI6MjAyMzc5NzQ4OX0.6v29JYil6XyMaBC8Uo4YzfKaAPsQSieNwmsG3bRdUd0"
 supabase = create_client(url, key)
 
-# data = supabase.table("Album").select("*").execute()
-# print(data ,"\n")
-
-# supabase.table("Album").delete().eq("id", "testid1").execute() # delete the album with id "testid1"
-# supabase.table("Album").insert({"id" : "testid1","god": "testgod1", "title":"testtitle1"}).execute() # insert the album with id "testid1"
-
-# data = supabase.table("Album").select("*").execute()
-# print("\n", data)
-
 app = FastAPI()
 
+@app.post("/user/create/{email},{name},{password}")
+async def create_user(email: str, name: str, password: str):
+    current_time = datetime.now().isoformat()
+    supabase.table("Users").insert({"email": email, "name": name, "password": password, "created_at": current_time}).execute()
+    return "User created"
 
-@app.post("/albums/create/{godID},{albumTitle}")
-async def create_album(godID: str, albumTitle: str):
-    # insert the album with id "testid1"
-    supabase.table("Albums").insert(
-        {"god": godID, "title": albumTitle}).execute()
-    return "Album created"
-
-
-@app.get("/albums/read")
-async def read_albums():
-    data = supabase.table("Albums").select("*").execute()
-    print("\n", data)
+@app.get("/user/readUsers")
+async def read_all_users():
+    data = supabase.table("Users").select("*").execute()
     return data
 
+@app.post("/albums/create/{title},{event},{isPublic}")
+async def create_album(title: str, event: str, isPublic: bool):
+    current_time = datetime.now().isoformat() 
+    
+    response = supabase.table("Albums").insert({"title": title, "event":event, "isPublic": isPublic, "created_at": current_time}).execute() # create the album
+    new_album_id = response.data[0]['album_id'] # get the album id
+    
+    supabase.table("AlbumUser").insert({ "album_id": new_album_id, "user_id":"17af2e9b-35fe-4b36-8d40-41d394084de1", "userRole_id": "3c2dfa74-4ceb-49eb-aa55-9c245758b75a"}).execute() # create the Album to God relationship
+    return "Album created"
+
+@app.get("/albums/readAlbums")
+async def read_all_albums():
+    data = supabase.table("Albums").select("*").execute()
+    return data
+
+@app.get("/albums/readUsersOfAlbum")
+async def read_users_of_album(album_id: str):
+    data = supabase.table("AlbumUser").select("*").eq("album_id", album_id).execute()
+    return data
+
+@app.get("/albums/read/{albumId}")
+async def read_this_album(albumId: str):
+    data = supabase.table("Albums").select("*").eq("album_id", albumId).execute()
+    return data
+
+@app.put("/albums/update/{albumId}")
+async def update_album(albumId: str, newTitle: str, newEvent: str, newIsPublic: bool):
+    supabase.table("Albums").update({"title": newTitle, "event": newEvent,"isPublic": newIsPublic}).eq("album_id", albumId).execute()
+    return "Album updated, new title is " + newTitle + ", new event is " + newEvent + ", and 'isPublic' is " + str(newIsPublic) + "."
+
+@app.put("/albums/setRole/{user_id},{album_id},{userRole_id}")
+async def set_role(user_id: str, album_id: str, userRole_id: str):
+    if not supabase.table("AlbumUser").select("*").eq("user_id", user_id).eq("album_id", album_id).eq("userRole_id", userRole_id).execute().data:
+        supabase.table("AlbumUser").insert({ "album_id": album_id, "user_id": user_id, "userRole_id": userRole_id}).execute()
+    return "Role updated"
 
 @app.put("/albums/delete/{albumId}")
 async def delete_album(albumId: str):
-    supabase.table("Albums").delete().eq("id", albumId).execute()
+    supabase.table("AlbumUser").delete().eq("album_id", albumId).execute()
+    supabase.table("Albums").delete().eq("album_id", albumId).execute()
     return "Album deleted"
-
-
-@app.put("/albums/update/{albumId}")
-async def update_album(albumId: str, newTitle: str):
-    supabase.table("Albums").update(
-        {"title": newTitle}).eq("id", albumId).execute()
-    return "Album updated, new title is " + newTitle + "."
-
-#inserir function aqui que faz o que add e promote user fazem
-
-@app.put("/albums/addUser/{albumId}")
-async def update_album(albumId: str, newUserID: str, role: str):
-    # try:
-    #     user_response = supabase.table("User").select("id").eq("id", newUserID).execute()
-    #     if user_response.error or not user_response.data:
-    #         raise Exception
-    # except Exception as e:
-    #     raise HTTPException(status_code=404, detail="User not found")
-    
-    try:
-        response = supabase.table("Albums").select(role).eq("id", albumId).execute()
-    except Exception as e:
-        raise HTTPException(status_code=404, detail="Album not found")
-    
-    role = role.lower()
-    if role not in ["photographer", "participant"]:
-        raise HTTPException(status_code=404, detail="Role not found")
-    
-    
-
-    updated_users = response.data[0][role]
-
-    if updated_users is None:
-        updated_users = []
-
-    updated_users.append(newUserID)
-
-    # Update the album in the database
-    response = supabase.table("Albums").update({role: updated_users}).eq("id", albumId).execute()
-
-    return "User added to album with role " + role + "."
-
-@app.put("/albums/promoteUser/{albumId}")
-async def update_album(albumId: str, newUserID: str, role: str):
-
-    role = role.lower()
-    if role not in ["supervisor", "owner"]:
-        raise HTTPException(status_code=404, detail="Role not found")
-    
-    try:
-        response = supabase.table("Albums").select(role).eq("id", albumId).execute()
-    except Exception as e:
-        raise HTTPException(status_code=404, detail="Album not found")
-
-    updated_users = response.data[0][role]
-
-    if updated_users is None:
-        updated_users = []
-
-    updated_users.append(newUserID)
-
-    # Update the album in the database
-    response = supabase.table("Albums").update({role: updated_users}).eq("id", albumId).execute()
-
-    return "User added to album with role " + role + "."
-# --------------------------------------------------------------------------------------------

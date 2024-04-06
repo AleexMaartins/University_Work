@@ -1,36 +1,59 @@
-from pydantic import BaseModel
-from typing import List
-from enum import Enum
+from sqlalchemy import Column, DateTime, ForeignKey, String, Boolean
+from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
 
-class Role(str, Enum): # there are many roles
-    PHOTOGRAPHER = "photographer"
-    SUPERVISOR = "supervisor"
-    PARTICIPANT = "participant"
-    OWNER = "owner"
-    GOD = "god"
+class Users():
+    __tablename__ = "Users"
 
-class User(BaseModel): # there are many users and can have various roles
-    id: str
-    name: str
-    roles: List[Role] = []
+    user_id = Column(UUID(as_uuid=True), primary_key=True)
+    created_at = Column(DateTime)
+    email = Column(String)
+    name = Column(String)
+    password = Column(String)
 
-class Photo(BaseModel): # there are many Photos, 1 Album and 1 or many Photographers
-    id: str
-    url: str                        # URL of the photo (can be a link to the photo or a path to the photo)
-    title: str                      
-    photographer: User              # User who uploaded the photo (Photographer/God/Supervisor)
-    hide : bool = False             # if True, ONLY Participants see the photos, even if the Album is public. Can be set to True/False by God/Owner
-    
-class Album(BaseModel): # there is 1 Album, 1 God, 1 or many Photographers(can become Supervisors) and 1 or many Participants(can become Album Owners) 
-    id: str
-    title: str
-    god : User                      # User who creates the Album (only 1 God per album)
-    owner: List[User] = []          # can be given by God to 1 or more Participants
-    supervisor: List[User] = []     # can be given by God to 1 or more Photographers
-    photographer: List[User] = []   # can be given by God/Supervisor to a new User
-    participant: List[User] = []    # can be given by God/Supervisor to a new User
-    photos: List[Photo] = []        # can be added by God/Supervisor/Photographer
-    public : bool = False           # if True, then all Users can see the Albums (including Unregistered Users)
-    
-    
-    
+    albums = relationship("AlbumUser", back_populates="user")
+    photos = relationship("Photos", back_populates="user")
+
+
+class AlbumUser():
+    __tablename__ = "AlbumUser"
+
+    albumUser_id = Column(UUID(as_uuid=True), primary_key=True)
+    created_at = Column(DateTime)
+    album_id = Column(UUID(as_uuid=True), ForeignKey('Albums.album_id'))
+    user_id = Column(UUID(as_uuid=True), ForeignKey('Users.user_id'))
+    userRole_id = Column(UUID(as_uuid=True), ForeignKey('UserRole.userRole_id'))
+
+    user = relationship("User", back_populates="albums")
+
+
+class Albums():
+    __tablename__ = "Albums"
+
+    album_id = Column(UUID(as_uuid=True), primary_key=True)
+    title = Column(String)
+    event = Column(String)
+    isPublic = Column(Boolean)
+    created_at = Column(DateTime)
+    photo_id = Column(UUID(as_uuid=True), ForeignKey('Photos.photo_id'))
+
+
+class Photos():
+    __tablename__ = "Photos"
+
+    photo_id = Column(UUID(as_uuid=True), primary_key=True)
+    created_at = Column(DateTime)
+    title = Column(String)
+    description = Column(String)
+    image_url = Column(String)
+    user_id = Column(UUID(as_uuid=True), ForeignKey('Users.user_id'))
+
+    user = relationship("User", back_populates="photos")
+
+
+class UserRole():
+    __tablename__ = "UserRole"
+
+    userRole_id = Column(UUID(as_uuid=True), primary_key=True)
+    role = Column(String)
+    created_at = Column(DateTime)

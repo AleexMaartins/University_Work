@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alex\\Documents\\Universidade\\University_Work\\3\u00BAano\\2\u00BASemestre\\BD\\AULAS\\Pr\u00E1ticas\\Aula1\\1.2\\Form1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2AB1C6-811C-488B-80D7-AFC8688BFD8A}|Form1\\Form1.csproj|c:\\users\\alex\\documents\\universidade\\university_work\\3\u00BAano\\2\u00BAsemestre\\bd\\aulas\\pr\u00E1ticas\\aula1\\1.2\\form1\\form1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A2AB1C6-811C-488B-80D7-AFC8688BFD8A}|Form1\\Form1.csproj|solutionrelative:form1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Alex\\Documents\\Universidade\\University_Work\\3\u00BAano\\2\u00BASemestre\\BD\\AULAS\\Pr\u00E1ticas\\Aula1\\1.2\\Form1\\Form1\\Program.cs",
+              "RelativeDocumentMoniker": "Form1\\Program.cs",
+              "ToolTip": "C:\\Users\\Alex\\Documents\\Universidade\\University_Work\\3\u00BAano\\2\u00BASemestre\\BD\\AULAS\\Pr\u00E1ticas\\Aula1\\1.2\\Form1\\Form1\\Program.cs",
+              "RelativeToolTip": "Form1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T10:40:32.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
