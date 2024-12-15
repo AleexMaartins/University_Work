@@ -1,0 +1,93 @@
+1)Resposta:6 posições
+0x10010000 #inicial
+0x10010001 T
+0x10010002 E
+0x10010003 S
+0x10010004 T
+0x10010005 1
+0x10010006 \
+
+
+2)Resposta:0x10010008
+0x10010000 #inicial
+0x10010001 T
+0x10010002 E
+0x10010003 S
+0x10010004 T
+0x10010005 1
+0x10010006 \
+.align2
+0x10010008
+
+3)Resposta:5 pq 20=4+4+4+4+4
+
+4)Resposta:0x10010014
+0x10010008  # inicial
+.space 20
+0x10010008 [0]
+0x1001000C [1]
+0x10010010 [2]
+0x10010014 [3]
+0x10010018 [4] 
+0x1001001C este já nao conta
+
+5)Resposta: 26
+1B = 16+11= 27
+menos o inicial de 0x10010000 pq fica antes do X1
+27-1=26
+
+6)Resposta:0x00400034
+0x00400000 #inicial
+main:
+la	8
+ori	4
+xor	4
+xor	4
+L1:
+beq	4
+add	4
+add	4
+addu	4
+sw	4
+add	4
+addi	4
+j	4
+total de 52
+L2:	0x00400034
+sw 
+
+7) Resposta:4
+repete até t0=0 ser igual a 4
+scomo faz t0++
+dura um total de 4 repetiçoes
+
+8)Resposta: 6
+X2[3] = t2, sendo preenchido no quarto loop
+t2 = t0+t0
+no terceiro loop t0=3 pelo que 
+t2 = 3+3=6
+
+9)Resposta: 0x0C
+t1=t1+t2
+t2= t0+t0
+<=> t1 = t1+t0+t0
+dentro do for t0 toma estes valores:
+----
+t0=0
+	t1 = 0+0+0 = 0
+t0=1
+	t1 = 0+1+1 = 2
+t0=2
+	t1 = 2+2+2 = 6
+t0=3
+	t1 = 6+3+3 = 12
+----
+12 = 0x0C
+
+10)Resposta: 0x10010018 
+.space 20
+0x10010008 [0]
+0x1001000C [1]
+0x10010010 [2]
+0x10010014 [3]
+0x10010018 [4] 

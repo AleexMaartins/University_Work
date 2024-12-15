@@ -1,0 +1,95 @@
+1) Resposta: 6
+0x10010000 #inicial
+0x10010001 T
+0x10010002 E
+0x10010003 S
+0x10010004 T
+0x10010005 1
+0x10010006 \0
+
+2)Resposta: 0x10010008
+0x10010000 #inicial
+0x10010001 T
+0x10010002 E
+0x10010003 S
+0x10010004 T
+0x10010005 1
+0x10010006 \0
+.align2
+x2:	0x10010008
+
+3)Resposta:5
+inteiros ocupam 4
+.space 20 
+20/4=5
+
+4) Resposta: 0x10010014
+x2:	
+[0x10010008,0x1001000C[ [0]
+[0x1001000C,0x10010010[ [1]
+[0x10010010,0x10010014[ [2]
+[0x10010014,0x10010018[ [3]
+[0x10010018,0x1001001C[ [4]
+
+5)Resposta: 26bytes
+x3 - x1
+0x1001001B - 0x10010001 = 0x1A
+0x1A = 16+10 = 26
+
+6) Resposta: 0x00400034
+0x00400000 #inicial
+la	8
+ori	4
+xor	4
+xor	4
+beq	4
+add	4
+add	4
+addu	4
+sw	4
+add	4
+addi	4
+j	4
+
+8+4*11=8+44=52 = 0x34
+
+7)Resposta: 4
+o loop é em beq $t0,$t5,L2
+t0= 0 (xor de t0 com t0 = 0)
+t5 = 4
+t0 aumenta 1 a cada loop
+loops:
+0
+1
+2
+3
+t0 = 4,nao muda mais nada e salta fora
+
+8) Resposta: 6 
+t4 = x2 
+t3 = t3 + t4
+t3[i]=t2
+t2= t0+t0
+0+0 [0]
+1+1 [1]
+2+2 [2]
+3+3 [3]
+x2[3] = 6
+
+9) Resposta: 0x0C
+t1=t1+t2
+i=0
+t1=t1+t2 = t1+t0+t0
+i=1
+t1=0+0
+i=2
+t1=0+2
+i=3 
+t1=2+4
+
+(ultimo loop)
+t1 = 6
+t2 = 6
+12 = 0x0C
+
+10)Reposta: 0x10010018

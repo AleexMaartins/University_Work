@@ -1,0 +1,54 @@
+1) Resposta:10
+$F47D3FA2\0
+
+2) 
+10
+.word -> 12
+.word 5 -> 16
+.word ... -> 36
+.align2 -> 36
+.space 4 -> 40
+
+3)Resposta: 0x10010084
+la	8
+la	8
+lw	4
+sll	4
+addu 	4
+xor	4
+lw	4
+lw	4
+sw	4
+sw	4
+andi	4
+add	4
+addiu	4
+addiu	4
+blt	8
+=72
+= 0x64 + 0x8 = 0x48
+0x3C + 0x48 = 0x84
+
+4) Resposta: 0x4A
+0x3C
++AA = 0x46
++CC = 0x4A
+
+la	$t0,CC 
+$t0 = 0x4A
+
+
+5)Resposta: 0x56
+0x4A 0
+0x4D 1
+0x52 2 
+0x56 3
+0x59 4
+0x5D 5
+
+6)
+0x4A
++ CC
+0x4A+20 = 0x4A+14 = 0x5E
+
+7)

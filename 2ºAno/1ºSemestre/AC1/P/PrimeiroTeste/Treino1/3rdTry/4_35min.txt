@@ -1,0 +1,84 @@
+1) Resposta: 6
+0x10010000 #start
+0x10010001 T
+0x10010002 E
+0x10010003 S
+0x10010004 T
+0x10010005 1
+0x10010006 \0
+0x10010008 .align 2
+
+2) Resposta: 0x10010008
+
+3) Resposta:5
+.space 20
+cada int ocupa 4
+4+4+4+4+4 = 8+8+4 = 16+4 = 20
+
+4) Resposta: 0x10010014
+[0x10010008, 0x1001000C[ [0]
+[0x1001000C, 0x10010010[ [1]
+[0x10010010, 0x10010014[ [2]
+[0x10010014, 0x10010018[ [3]
+[0x10010018, 0x1001001C[ [4]
+
+5) Resposta: 26 bytes
+[0x10010018, 0x1001001C[   [4]
+x3 nao ocupa nada pq está vazio
+pelo que o ultimo valor a ocupar espaço é 0x1001001B
+x1 começa em 0x10010001 
+x3 termina em 0x1001001B
+0x1B-0x01= 0x1A = 16 + 10 = 26
+
+6) Resposta: 0x00400034 
+0x00400000 #start
+la	8
+ori	4
+xor	4
+xor	4
+beq	4
+add	4
+add	4
+addu	4
+sw	4
+add	4
+addi	4
+j	4
+
+52= 48+4 = 0x34
+
+7) Resposta: 4
+para quando t0=t5
+t0 = xor t0 com t0 = 0
+t5 =4
+a cada loop t0 é incrementado 1
+pelo 0->1->2->3->fim
+a igualdade verifica se no 5º loop 
+
+8) Resposta:6
+X2[3] = t2, sendo preenchido no quarto loop
+t2 = t0+t0
+no terceiro loop t0=3 pelo que 
+t2 = 3+3=6
+
+9) Resposta: 0x0C
+t1=t1+t2
+t2 = t0+t0 sendo repetido a cada loop
+t1=t1+t0+t0
+
+i=0
+0+0+0=0
+
+i=1
+0+1+1=2
+
+i=2
+2+2+2=6
+
+i=3
+6+3+3=12
+
+quando i = 4 sai do pelo branch
+12= 0x0C
+
+10) Resposta : 0x10010018 

@@ -27,7 +27,7 @@ for:
 	syscall
 	
 	li $a0,'\n'
-	li $v0,print_char		
+	li $v0,print_char
 	syscall
 	
 	addi $t0,$t0, 1 # i++

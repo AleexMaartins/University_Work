@@ -1,11 +1,11 @@
 # Mapa de registos
 # p: $t0
-# *p: $t1 (Registo temporário para guardar o valor armazenado em memória)
+# *p: $t1 (Registo temporï¿½rio para guardar o valor armazenado em memï¿½ria)
 # lista+Size: $t2
 	
 	#(...)
 	.data
-lista:	.word 8,-4, 3, 5, 124, -15, 87, 9, 27, 15 # a diretiva ".word" alinha num endereço múltiplo de 4 
+lista:	.word 8,-4, 3, 5, 124, -15, 87, 9, 27, 15 # a diretiva ".word" alinha num endereï¿½o mï¿½ltiplo de 4 
 	#(...)
 	.eqv print_string,4
 	.eqv print_int10,1

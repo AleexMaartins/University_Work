@@ -1,0 +1,88 @@
+1) Resposta:6
+0x10010000 #inicio
+0x10010001 T
+0x10010002 E
+0x10010003 S
+0x10010004 T
+0x10010005 1
+0x10010006 \0
+
+2) Resposta:0x10010008 
+0x10010000 #inicio
+0x10010001 T
+0x10010002 E
+0x10010003 S
+0x10010004 T
+0x10010005 1
+0x10010006 \0
+0x10010008 align2
+x2:
+
+3)Resposta:5
+inteiros têm 4 espaços 20/4=5
+ 
+4) Resposta: 0x10010014
+0x10010008 [0]
+0x1001000C [1]
+0x10010010 [2]
+0x10010014 [3]
+0x10010018 [4]
+
+5) Resposta: 26
+0x1001001B-0x10010001= 0x1001001A= 16+10=26
+
+6) Resposta:0x00400034
+0x00400000
+la	8
+ori	4
+xor	4
+xor	4
+beq	4
+add	4
+add	4
+addu	4
+sw	4
+add	4
+addi	4
+j	4
+L2:
+52=0x34
+
+7) Resposta:4
+t0 = t5 termina
+t0 = 0
+t5 = 4
+
+i=0
+
+i=1
+
+i=2
+
+i=3
+
+8) Resposta: 6
+t2 = t0+t0
+t0 aumenta 1 a cada loop pelo que no terceiro, quando for o x2[3]
+t0 = 3
+logo t2 = 3+3=6
+
+9) 0x0C
+t1= t1+t2
+t2 =t0+t0
+t1 = t1 + t0+t0
+i=0
+0+0+0
+i=1
+0+1+1= 2
+i=2
+2+2+2=6
+i=3
+6+3+3=12
+
+10)Resposta:0x10010018 
+0x10010008 [0]
+0x1001000C [1]
+0x10010010 [2]
+0x10010014 [3]
+0x10010018 [4]
