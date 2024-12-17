@@ -1,2 +1,0 @@
-fastapi[all]==0.68.1
-supabase-py==0.3.2
