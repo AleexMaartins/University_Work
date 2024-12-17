@@ -1,0 +1,74 @@
+May 15 16:19:16.893 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+May 15 16:19:16.893 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59669.
+May 15 16:19:17.404 HYPERVISOR: exec_cmd: hypervisor version 
+May 15 16:19:17.405 HYPERVISOR: exec_cmd: hypervisor working_dir C:\UniversidadeProgramas\RC2\Pratica\Week 9-10\1\project-files\dynamips 
+May 15 16:19:17.405 GENERAL: working_dir=C:\UniversidadeProgramas\RC2\Pratica\Week 9-10\1\project-files\dynamips
+May 15 16:19:17.405 HYPERVISOR: exec_cmd: hypervisor working_dir C:\UniversidadeProgramas\RC2\Pratica\Week 9-10\1\project-files\dynamips\585b3580-b850-4299-82ef-566f53dd86f1 
+May 15 16:19:17.406 GENERAL: working_dir=C:\UniversidadeProgramas\RC2\Pratica\Week 9-10\1\project-files\dynamips\585b3580-b850-4299-82ef-566f53dd86f1
+May 15 16:19:17.407 HYPERVISOR: exec_cmd: vm create R4 4 c7200 
+May 15 16:19:17.408 VM: VM R4 created.
+May 15 16:19:17.409 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 7003 
+May 15 16:19:17.409 HYPERVISOR: exec_cmd: c7200 get_mac_addr R4 
+May 15 16:19:17.409 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:19:17.409 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-FE 
+May 15 16:19:17.410 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:19:17.410 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:19:17.410 HYPERVISOR: exec_cmd: vm set_idle_pc R4 0x601712a8 
+May 15 16:19:17.411 HYPERVISOR: exec_cmd: vm set_exec_area R4 64 
+May 15 16:19:17.411 HYPERVISOR: exec_cmd: vm set_ram R4 512 
+May 15 16:19:17.412 HYPERVISOR: exec_cmd: vm set_nvram R4 512 
+May 15 16:19:17.412 HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+May 15 16:19:17.412 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:19:17.413 HYPERVISOR: exec_cmd: vm slot_remove_binding R4 0 0 
+May 15 16:19:17.413 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:19:17.413 HYPERVISOR: exec_cmd: vm slot_add_binding R4 0 0 C7200-IO-2FE 
+May 15 16:19:17.414 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:19:17.414 HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 PA-2FE-TX 
+May 15 16:19:17.453 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:19:24.951 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:19:26.209 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:19:45.177 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:19:48.057 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:20:32.311 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:20:47.650 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:21:31.246 HYPERVISOR: exec_cmd: nio create_udp udp-33c73adf-9388-46fe-91bc-8fba5468bcbb 20020 127.0.0.1 20021 
+May 15 16:21:31.502 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 0 1 udp-33c73adf-9388-46fe-91bc-8fba5468bcbb 
+May 15 16:21:31.503 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:21:39.090 HYPERVISOR: exec_cmd: nio create_udp udp-ab167634-90f0-451a-a4a0-3a57210518d6 20030 127.0.0.1 20031 
+May 15 16:21:39.093 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 0 0 udp-ab167634-90f0-451a-a4a0-3a57210518d6 
+May 15 16:21:39.094 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:21:43.473 HYPERVISOR: exec_cmd: nio create_udp udp-af3aea41-d83b-4f3c-aab5-fc46fd737adf 20034 127.0.0.1 20035 
+May 15 16:21:43.477 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 1 0 udp-af3aea41-d83b-4f3c-aab5-fc46fd737adf 
+May 15 16:21:43.477 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:22:13.054 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:23:15.270 HYPERVISOR: exec_cmd: vm set_ghost_status R4 2 
+May 15 16:23:15.270 HYPERVISOR: exec_cmd: vm set_ghost_file R4 C:\UniversidadeProgramas\RC2\Pratica\Week 9-10\1\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost 
+May 15 16:23:15.271 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:23:15.279 HYPERVISOR: exec_cmd: vm set_config R4 configs\i4_startup-config.cfg 
+May 15 16:23:15.281 HYPERVISOR: exec_cmd: vm start R4 
+May 15 16:23:45.633 HYPERVISOR: exec_cmd: vm extract_config R4 
+May 15 16:28:01.230 HYPERVISOR: exec_cmd: vm get_status R4 
+May 15 16:28:01.233 HYPERVISOR: exec_cmd: vm stop R4 
+May 15 16:28:01.420 VM: VM R4 shutdown.
+May 15 16:28:01.420 HYPERVISOR: exec_cmd: vm extract_config R4 
+May 15 16:28:19.285 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:28:19.286 HYPERVISOR: exec_cmd: vm rename R4 R2B 
+May 15 16:28:19.349 HYPERVISOR: exec_cmd: vm set_ios R2B C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:28:22.039 HYPERVISOR: exec_cmd: vm set_ios R2B C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+May 15 16:38:29.352 HYPERVISOR: exec_cmd: vm set_ghost_status R2B 2 
+May 15 16:38:29.355 HYPERVISOR: exec_cmd: vm set_ghost_file R2B C:\UniversidadeProgramas\RC2\Pratica\Week 9-10\1\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost 
+May 15 16:38:29.355 HYPERVISOR: exec_cmd: vm get_status R2B 
+May 15 16:38:29.365 HYPERVISOR: exec_cmd: vm set_config R2B configs\i4_startup-config.cfg 
+May 15 16:38:29.366 HYPERVISOR: exec_cmd: vm start R2B 
+May 15 16:47:29.867 HYPERVISOR: exec_cmd: vm extract_config R2B 
+May 15 17:03:00.171 HYPERVISOR: exec_cmd: vm extract_config R2B 
+May 15 17:13:00.368 HYPERVISOR: exec_cmd: vm extract_config R2B 
+May 15 17:38:12.186 HYPERVISOR: exec_cmd: vm get_status R2B 
+May 15 17:38:12.189 HYPERVISOR: exec_cmd: vm stop R2B 
+May 15 17:38:12.377 VM: VM R2B shutdown.
+May 15 17:38:12.378 HYPERVISOR: exec_cmd: vm extract_config R2B 
+May 15 17:38:57.945 HYPERVISOR: exec_cmd: vm set_ghost_status R2B 2 
+May 15 17:38:57.945 HYPERVISOR: exec_cmd: vm set_ghost_file R2B C:\UniversidadeProgramas\RC2\Pratica\Week 9-10\1\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost 
+May 15 17:38:57.946 HYPERVISOR: exec_cmd: vm get_status R2B 
+May 15 17:38:57.957 HYPERVISOR: exec_cmd: vm set_config R2B configs\i4_startup-config.cfg configs\i4_private-config.cfg 
+May 15 17:38:57.959 HYPERVISOR: exec_cmd: vm start R2B 

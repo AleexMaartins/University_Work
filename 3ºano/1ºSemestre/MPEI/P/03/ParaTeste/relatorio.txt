@@ -1,0 +1,40 @@
+1)"Todos os dias que tem aulas desta UC, o aluno decide se vai a aula ou n ` ao da seguinte forma: Se tiver ˜
+estado presente na aula anterior a probabilidade de ir a aula ` e 70%; se faltou ´ a anterior, a probabilidade `
+de ir e 80%"
+-transição deestados
+
+2)" Divide-se uma turma em 3 grupos (A, B e C) no in´ıcio do
+semestre e no final de cada aula efectuam-se os seguintes movimentos"
+-matriz estocastica
+-transição de estados
+-vector relativo ao estado inicial
+
+3)"Gere aleatoriamente uma matriz de transicao de estados para uma cadeia de 20 estados"
+-gerir aleatoriamente 20 estados
+-transição de estados
+-comecando no estado 1, estar no estado 20 apos 2 transicoes? E apos 5? E apos 10?
+
+4)"Considere o seguinte diagrama representativo de uma Cadeia de Markov"
+-transição de estados
+-comecando no estado 1, estar no estado 20 apos 2 transicoes? E apos 5? E apos 10?
+-probabilidades limite de cada estado
+
+5)"3 estados – sol, nuvens e chuva"
+-transição de estados
+-prob de nao chover sendo que sol no dia anterior
+-qnt chuva no mes inteiro
+-pessoa com reumatismo cronico que tem dores reumaticas com probabilidades de 10%, 30% e 50% quando os dias sao de sol, de nuvens ou de chuva
+
+6)"Markov com o diagrama de transicao de estados"
+-transição de estados probabilidade de ir do estado j para o estado i num unico passo.
+-bue graficos
+-prob de abosorçao
+
+7)
+-transição de estados matriz H das hyperligacoes, obtenha a estimativa do pagerank de cada pagina ao fim de 10 iteracoes.
+-spider trap / dead end
+
+exsup1)"Relativamente ao problema 6 da seccao "
+-Confirme os valores calculados nas alineas (f) e (g) atraves de simulacao 
+- variavel do tipo cell ray & estados absorventes
+-bue texto

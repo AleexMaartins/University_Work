@@ -1,0 +1,6 @@
+compilar: antlr4-build
+testar: antlr4-test #-gui ou -tokens < ficheiro
+criar visitors: antlr4-visitor <NOME_GRAMATICA> <NOME_VISITOR> String
+criar execute : antlr4-visitor PrefixCalculator Execute String
+criar main: antlr4-main -v <NOME_VISITOR>
+executar: antlr4-run # < ficheiro

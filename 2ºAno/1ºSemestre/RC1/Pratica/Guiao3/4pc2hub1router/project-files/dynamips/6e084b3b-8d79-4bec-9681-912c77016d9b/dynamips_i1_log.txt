@@ -1,0 +1,12 @@
+Oct 26 11:18:56.953 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 26 11:18:56.955 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 52878.
+Oct 26 11:18:57.386 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 26 11:18:57.387 HYPERVISOR: exec_cmd: hypervisor working_dir C:\RC1\Pratica\Guiao3\4pc2hub1router\project-files\dynamips 
+Oct 26 11:18:57.401 GENERAL: working_dir=C:\RC1\Pratica\Guiao3\4pc2hub1router\project-files\dynamips
+Oct 26 11:18:57.403 HYPERVISOR: exec_cmd: nio_bridge create Hub1 
+Oct 26 11:18:58.800 HYPERVISOR: exec_cmd: nio create_udp udp-e044563f-86a1-42b0-84e5-7d054128590b 10001 127.0.0.1 10000 
+Oct 26 11:18:58.801 HYPERVISOR: exec_cmd: nio_bridge add_nio Hub1 udp-e044563f-86a1-42b0-84e5-7d054128590b 
+Oct 26 11:18:58.869 HYPERVISOR: exec_cmd: nio create_udp udp-15720763-9465-4eb9-8e9e-3881f75c801e 10002 127.0.0.1 10003 
+Oct 26 11:18:58.870 HYPERVISOR: exec_cmd: nio_bridge add_nio Hub1 udp-15720763-9465-4eb9-8e9e-3881f75c801e 
+Oct 26 11:18:59.656 HYPERVISOR: exec_cmd: nio create_udp udp-c86cc21d-7ec3-4aec-9e6a-b8c06c747249 10014 127.0.0.1 10015 
+Oct 26 11:18:59.657 HYPERVISOR: exec_cmd: nio_bridge add_nio Hub1 udp-c86cc21d-7ec3-4aec-9e6a-b8c06c747249 

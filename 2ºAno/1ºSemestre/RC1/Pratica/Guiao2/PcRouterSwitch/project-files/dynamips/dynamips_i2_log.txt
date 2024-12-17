@@ -1,0 +1,70 @@
+Oct 18 17:35:02.295 HYPERVISOR: Release 0.2.17-x86/Windows (tag 2017072410)
+Oct 18 17:35:02.296 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 54309.
+Oct 18 17:35:02.774 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 18 17:35:02.775 HYPERVISOR: exec_cmd: hypervisor working_dir C:\RC1\Pratica\PcRouterSwitch\project-files\dynamips 
+Oct 18 17:35:02.775 GENERAL: working_dir=C:\RC1\Pratica\PcRouterSwitch\project-files\dynamips
+Oct 18 17:35:02.776 HYPERVISOR: exec_cmd: hypervisor working_dir C:\RC1\Pratica\PcRouterSwitch\project-files\dynamips\3a60f6ae-65e4-40aa-b78c-6c4ac8d7a523 
+Oct 18 17:35:02.776 GENERAL: working_dir=C:\RC1\Pratica\PcRouterSwitch\project-files\dynamips\3a60f6ae-65e4-40aa-b78c-6c4ac8d7a523
+Oct 18 17:35:02.776 HYPERVISOR: exec_cmd: vm create R2 2 c7200 
+Oct 18 17:35:02.777 VM: VM R2 created.
+Oct 18 17:35:02.778 HYPERVISOR: exec_cmd: vm set_con_tcp_port R2 7005 
+Oct 18 17:35:02.778 HYPERVISOR: exec_cmd: c7200 get_mac_addr R2 
+Oct 18 17:35:02.778 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:35:02.779 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-FE 
+Oct 18 17:35:02.780 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:35:02.781 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:35:02.782 HYPERVISOR: exec_cmd: vm set_idle_pc R2 0x601712a8 
+Oct 18 17:35:02.783 HYPERVISOR: exec_cmd: vm set_exec_area R2 64 
+Oct 18 17:35:02.784 HYPERVISOR: exec_cmd: vm set_ram R2 512 
+Oct 18 17:35:02.785 HYPERVISOR: exec_cmd: vm set_nvram R2 512 
+Oct 18 17:35:02.786 HYPERVISOR: exec_cmd: vm set_disk0 R2 0 
+Oct 18 17:35:02.787 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:35:02.788 HYPERVISOR: exec_cmd: vm slot_remove_binding R2 0 0 
+Oct 18 17:35:02.789 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:35:02.789 HYPERVISOR: exec_cmd: vm slot_add_binding R2 0 0 C7200-IO-2FE 
+Oct 18 17:35:02.790 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:35:02.790 HYPERVISOR: exec_cmd: vm slot_add_binding R2 1 0 PA-2FE-TX 
+Oct 18 17:35:02.887 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:35:11.417 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:35:19.238 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:35:19.682 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:35:24.664 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:35:53.346 HYPERVISOR: exec_cmd: nio create_udp udp-42a976e8-be08-4481-9c81-c9d00d8724cc 10008 127.0.0.1 10009 
+Oct 18 17:35:53.632 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 1 udp-42a976e8-be08-4481-9c81-c9d00d8724cc 
+Oct 18 17:35:53.632 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:36:03.833 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:36:12.873 HYPERVISOR: exec_cmd: vm set_ios R2 C:/Users/Alex/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Oct 18 17:36:20.333 HYPERVISOR: exec_cmd: nio create_udp udp-9e8e79ac-5fed-4be4-a485-2c2a2b850c2a 10012 127.0.0.1 10013 
+Oct 18 17:36:20.338 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R2 0 0 udp-9e8e79ac-5fed-4be4-a485-2c2a2b850c2a 
+Oct 18 17:36:20.339 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:36:36.208 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Oct 18 17:36:36.210 HYPERVISOR: exec_cmd: vm set_ghost_file R2 C:\RC1\Pratica\PcRouterSwitch\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost 
+Oct 18 17:36:36.211 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:36:36.212 HYPERVISOR: exec_cmd: vm set_config R2 configs\i2_startup-config.cfg 
+Oct 18 17:36:36.213 HYPERVISOR: exec_cmd: vm start R2 
+Oct 18 17:37:01.374 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:37:01.376 HYPERVISOR: exec_cmd: vm stop R2 
+Oct 18 17:37:01.554 VM: VM R2 shutdown.
+Oct 18 17:37:01.556 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 18 17:37:06.038 HYPERVISOR: exec_cmd: vm set_ghost_status R2 2 
+Oct 18 17:37:06.039 HYPERVISOR: exec_cmd: vm set_ghost_file R2 C:\RC1\Pratica\PcRouterSwitch\project-files\dynamips\c7200-adventerprisek9-mz.151-4.M2.image-512.ghost 
+Oct 18 17:37:06.040 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:37:06.042 HYPERVISOR: exec_cmd: vm set_config R2 configs\i2_startup-config.cfg 
+Oct 18 17:37:06.047 HYPERVISOR: exec_cmd: vm start R2 
+Oct 18 17:37:12.627 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:37:12.628 HYPERVISOR: exec_cmd: vm slot_disable_nio R2 0 1 
+Oct 18 17:37:12.644 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R2 0 1 
+Oct 18 17:37:12.645 HYPERVISOR: exec_cmd: nio delete udp-42a976e8-be08-4481-9c81-c9d00d8724cc 
+Oct 18 17:37:12.680 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:37:12.681 HYPERVISOR: exec_cmd: vm slot_disable_nio R2 0 0 
+Oct 18 17:37:12.704 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding R2 0 0 
+Oct 18 17:37:12.706 HYPERVISOR: exec_cmd: nio delete udp-9e8e79ac-5fed-4be4-a485-2c2a2b850c2a 
+Oct 18 17:37:12.782 HYPERVISOR: exec_cmd: vm get_status R2 
+Oct 18 17:37:12.783 HYPERVISOR: exec_cmd: vm stop R2 
+Oct 18 17:37:12.880 VM: VM R2 shutdown.
+Oct 18 17:37:12.881 HYPERVISOR: exec_cmd: vm extract_config R2 
+Oct 18 17:37:12.884 HYPERVISOR: exec_cmd: vm delete R2 
+Oct 18 17:37:12.884 VM: VM R2 destroyed.
+Oct 18 17:37:12.887 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 18 17:37:13.259 HYPERVISOR: Stopped.
+Oct 18 17:37:13.259 GENERAL: reset done.
