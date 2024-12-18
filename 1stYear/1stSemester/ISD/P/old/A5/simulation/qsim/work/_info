@@ -1,0 +1,222 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11e MIXED_VERSIONS
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/UniversidadeProgramas/ISD/Praticas/A5/simulation/qsim
+T_opt
+!s110 1700131913
+VL@B<7ZYffAKjZAa:2L98>0
+04 20 4 work GateDemo_vlg_vec_tst fast 0
+=1-c0180385a1b1-6555f448-2e5-b90
+Z2 !s124 OEM10U3 
+o-quiet -auto_acc_if_foreign -work work -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1700132013
+Vj[V?8IFZn@dB4[1K@5j:?2
+04 20 13 work gatedemo_vhd_vec_tst gatedemo_arch 1
+=1-c0180385a1b1-6555f4ac-301-5e64
+R2
+o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+R3
+n@_opt1
+R4
+Egatedemo
+Z5 w1700132010
+Z6 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z7 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 gn]m8U<PzXZH32IDQ4:hj3
+Z8 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z11 DPx10 cycloneive 21 cycloneive_components 0 22 cSe5`^NYM;IRV3WNS^Q7a2
+!i122 10
+R1
+Z12 8GateDemo.vho
+Z13 FGateDemo.vho
+l0
+L78 1
+V6B]Lk@1SU@hjE[`niWMbX3
+!s100 ;EMl_F4gCeUJ[JO<BW1LY0
+Z14 OL;C;2021.2;73
+32
+Z15 !s110 1700132012
+!i10b 1
+Z16 !s108 1700132012.000000
+Z17 !s90 -work|work|GateDemo.vho|
+Z18 !s107 GateDemo.vho|
+!i113 0
+Z19 o-work work
+Z20 tExplicit 1 CvgOpt 0
+Astructure
+R6
+R7
+R8
+R9
+R10
+R11
+DEx4 work 8 gatedemo 0 22 6B]Lk@1SU@hjE[`niWMbX3
+!i122 10
+l131
+L98 198
+V;TOjZ>I:A@EmG6fd26RUz0
+!s100 cXa[]HDDfhiK2N16S4>T^1
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20
+vGateDemo
+Z21 !s110 1700131912
+!i10b 1
+!s100 lM;h`<bj`VZH2E]G088z73
+I=7Yo3JKzo4nZhK>]@0=z=1
+R1
+w1700131910
+8GateDemo.vo
+FGateDemo.vo
+!i122 6
+L0 32 197
+Z22 VDg1SIo80bB@j0V0VzS_@n1
+Z23 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z24 !s108 1700131912.000000
+!s107 GateDemo.vo|
+!s90 -work|work|GateDemo.vo|
+!i113 0
+Z25 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@gate@demo
+Egatedemo_vhd_vec_tst
+Z26 w1700132009
+R9
+R10
+!i122 11
+R1
+Z27 8GateDemo.vwf.vht
+Z28 FGateDemo.vwf.vht
+l0
+L32 1
+V6cP6Ym2gH5GlGLc>USo020
+!s100 XYFQ4nK6noeeQ6Oi7R@NC2
+R14
+32
+R15
+!i10b 1
+R16
+Z29 !s90 -work|work|GateDemo.vwf.vht|
+Z30 !s107 GateDemo.vwf.vht|
+!i113 0
+R19
+R20
+Agatedemo_arch
+R9
+R10
+DEx4 work 20 gatedemo_vhd_vec_tst 0 22 6cP6Ym2gH5GlGLc>USo020
+!i122 11
+l47
+L34 94
+VEYefO8IX;>zO`Cn<mdPkZ0
+!s100 [^AhooHj4Re]102S4Y7UT0
+R14
+32
+R15
+!i10b 1
+R16
+R29
+R30
+!i113 0
+R19
+R20
+vGateDemo_vlg_vec_tst
+R21
+!i10b 1
+!s100 QN8SiLZfih[43;W@B?GGj3
+IY];j@TDNjL^5Ulo[GWcZ[0
+R1
+w1700131909
+8GateDemo.vwf.vt
+FGateDemo.vwf.vt
+!i122 7
+L0 30 76
+R22
+R23
+r1
+!s85 0
+31
+R24
+!s107 GateDemo.vwf.vt|
+!s90 -work|work|GateDemo.vwf.vt|
+!i113 0
+R25
+R3
+n@gate@demo_vlg_vec_tst
+Ehard_block
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+!i122 10
+R1
+R12
+R13
+l0
+L35 1
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20
+Astructure
+R6
+R7
+R8
+R9
+R10
+R11
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+!i122 10
+l65
+L51 20
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20

@@ -1,0 +1,44 @@
+Questão 2
+double proc(double *array, double thd, double val, int n)
+{
+ 	int i;
+ 	double aux, sum;
+ 	sum = 0.0;
+ 	for (i = 0; i < n; i++) {
+ 		aux = array[i] + val;
+ 		if (aux > thd) {
+			array[i] = thd;
+	 		sum += thd;
+	 	} else {
+	 		array[i] = aux;
+	 		sum += aux;
+	 	}
+}
+	return sum / (double) n;
+}
+
+#################################################################
+
+Questão 3
+# typedef struct
+# { Alignment Size Offset
+# char smp[10]; xx xx xx
+# double av; xx xx xx
+# int ns; xx xx xx
+# char id; xx xx xx
+# int sum; xx xx xx
+# } t_cell; xx xx
+
+double prcells(t_cell *tc, int size)
+{
+ 	double res, aux;
+ 	int i;
+ 	res = 0.0;
+ 	for (i = 0; i < size; i++) {
+ 		aux = (double)tc[i].ns / 3.597;
+ 		res = res + aux;
+ 		tc[i].av = aux;
+ 		tc[i].sum = (int)res;
+ 	}
+ 	return res;
+}
