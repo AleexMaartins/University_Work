@@ -1,0 +1,12 @@
+rato
+macaco
+animal
+mamífero
+palavra
+pessoa        
+agua
+cachorro
+pato
+gato
+sapo
+mato

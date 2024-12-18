@@ -1,0 +1,5 @@
+rato
+macaco
+animal
+mamífero
+palavra

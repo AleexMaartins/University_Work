@@ -1,0 +1,20 @@
+Classes escolhidas:
+-java.io.InputStream
+-java.util.AbstractList
+-java.util.AbstractMap
+
+Nas classes escolhidas o padrão Template Method é usado para definir o esqueleto de operações e decidir passos para as subclasses. Desta forma é muito mais fácil reutilizar código e facilita também a manutenção, permitindo que novas funcionalidades sejam adicionadas através de subclasses sem comprometer a estrutura geral de algoritmos definidos em classes abstratas.
+
+Exemplos notados:
+InputStream
+- read() -> fornece um esqueleto para a leitura de bytes de um stream
+o método será implementado pelas subclasses
+
+AbstractList
+- add(E e) -> recorre ao método add(int index, E element) que deve será pelas subclasses
+o mesmo para o remove
+
+AbstractMap
+- put(K key, V value) -> delega a lógica específica de inserção para o método putAll(Map<? extends K, ? extends V> m).
+este por sua vez chama o método put(K key, V value)
+subclasses irãopor sua vezfornecer implementações concretas para put(K key, V value)
