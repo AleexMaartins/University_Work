@@ -9,6 +9,7 @@ main:	ori $t0,$0,2 # substituir val_1 e val_2 pelos 	binary = 10
 	
 	nor $t4,$t0,$t1 # $t4 = ~($t0 | $t1) 
 	xor $t5,$t0,$t1 # $t5 = $t0 ^ $t1 
-
-
+	
 	jr $ra # fim do programa
+
+	

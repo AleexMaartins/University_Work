@@ -3,7 +3,7 @@
 # value: $t1
 # i: $t2
 	.data
-str1:	.asciiz "Introduza um numero: "
+str1:	.asciiz "ac1"
 str2:	.asciiz "Valor ignorado\n"
 str3:	.asciiz "A soma dos positivos é: "
 	.eqv print_string,4

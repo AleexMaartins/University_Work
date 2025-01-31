@@ -2,6 +2,7 @@
 #val: $t0
 #res: $f0
 
+
 	.data
 ft1:	.float	2.59375
 ft0:	.float	0.0
